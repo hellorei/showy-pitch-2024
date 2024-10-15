@@ -20,7 +20,6 @@ import Team from "./team";
 
 function App() {
   const [current, setCurrent] = useState(0);
-  const [title, setTitle] = useState("");
 
   const deckDivRef = useRef<HTMLDivElement>(null); // reference to deck container div
   const deckRef = useRef<Reveal.Api | null>(null); // reference to deck reveal instance
@@ -39,13 +38,10 @@ function App() {
     deckRef.current.initialize().then(() => {
       // good place for event handlers and plugin setups
       // on slide change
-      deckRef.current?.on("slidechanged", (event) => {
-        // eslint-disable-next-line no-ts-ignore
-        // @ts-ignore
+      deckRef.current?.on("slidechanged", (event: any) => {
         const index = event.indexh;
 
         setCurrent(index);
-        setTitle(slides[index].title);
       });
     });
 
@@ -131,7 +127,7 @@ function App() {
           <p className="text-lg">
             Funding amount
             <br />
-            What we're looking for beyond funding (contacts, mentors, advisors,
+            What we are looking for beyond funding (contacts, mentors, advisors,
             operative support)
             <br />
             How the funding will be used.

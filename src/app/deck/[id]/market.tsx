@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 export default function DeckPage({ current }: { current?: boolean }) {
   const rectRef = useRef(null);
   const rectRefB = useRef(null);
+  console.log(current);
 
   useEffect(() => {
     anime({

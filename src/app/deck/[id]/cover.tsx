@@ -1,4 +1,5 @@
 export default function DeckPage({ current }: { current?: boolean }) {
+  console.log(current);
   return (
     <div className="flex flex-col text-left">
       <div className="flex text-[10rem] font-narrow font-semibold leading-[0.8] uppercase tracking-tighter relative right-2">

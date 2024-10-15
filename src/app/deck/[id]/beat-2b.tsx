@@ -1,4 +1,5 @@
 export default function DeckPage({ current }: { current?: boolean }) {
+  console.log(current);
   return (
     <div className="flex">
       <div className="flex flex-col self-center">

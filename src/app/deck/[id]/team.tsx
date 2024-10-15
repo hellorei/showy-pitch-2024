@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 export default function DeckPage({ current }: { current?: boolean }) {
+  console.log(current);
   const founders = [
     {
       name: "Rei Romero",

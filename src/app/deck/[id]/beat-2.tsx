@@ -13,7 +13,7 @@ export default function DeckPage() {
     const currentSlide = currentHref.split("/").pop();
     setValue(currentSlide === "3" ? 30 : 1);
     setValueTools(currentSlide === "3" ? 15 : 3);
-  }, []);
+  }, [window.location.href]);
 
   const keyPoints = [
     {

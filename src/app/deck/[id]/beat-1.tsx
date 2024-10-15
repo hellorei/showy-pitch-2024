@@ -26,7 +26,7 @@ export default function DeckPage() {
     return () => {
       window.removeEventListener("popstate", updateSlide);
     };
-  }, []);
+  }, [window.location.href]);
 
   // Framer Motion Variants for Bounce Effect
   const bounceVariants = {

@@ -1,6 +1,6 @@
 "use client";
 // App.tsx
-import { useEffect, useRef, useState } from "react";
+import { cloneElement, useEffect, useRef, useState } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
@@ -13,12 +13,14 @@ import Beat4b from "./beat-4b";
 import BusinessModel from "./business-model";
 import Cover from "./cover";
 import Journey from "./journey";
+import JourneyExtended from "./journey-extended";
 import Market from "./market";
 import Market2 from "./market-2";
 import Team from "./team";
 
 function App() {
-  const [isCurrent, setIsCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [title, setTitle] = useState("");
 
   const deckDivRef = useRef<HTMLDivElement>(null); // reference to deck container div
   const deckRef = useRef<Reveal.Api | null>(null); // reference to deck reveal instance
@@ -36,6 +38,15 @@ function App() {
 
     deckRef.current.initialize().then(() => {
       // good place for event handlers and plugin setups
+      // on slide change
+      deckRef.current?.on("slidechanged", (event) => {
+        // eslint-disable-next-line no-ts-ignore
+        // @ts-ignore
+        const index = event.indexh;
+
+        setCurrent(index);
+        setTitle(slides[index].title);
+      });
     });
 
     return () => {
@@ -49,12 +60,6 @@ function App() {
       }
     };
   }, []);
-
-  // set current slide when the slide changes
-  useEffect(() => {
-    const lastCharOfPath = window.location.href;
-    setIsCurrent(Number(lastCharOfPath));
-  }, [window.location.href]);
 
   const slides = [
     {
@@ -87,8 +92,21 @@ function App() {
     },
     {
       title: "Our Journey",
-      content: <Journey />,
+      content: (
+        <>
+          <section>
+            <Journey />
+          </section>
+          <section>
+            <JourneyExtended />
+          </section>
+        </>
+      ),
     },
+    // {
+    //   title: "Our Journey 2",
+    //   content: <JourneyExtended />,
+    // },
     {
       title: "Market",
       content: <Market />,
@@ -106,11 +124,53 @@ function App() {
       content: <Team />,
     },
     {
-      title: "Slide 3",
+      title: "The Ask",
       content: (
         <div>
-          <h1>Slide 3</h1>
-          <p>This is the third slide.</p>
+          <h1>The Ask</h1>
+          <p className="text-lg">
+            Funding amount
+            <br />
+            What we're looking for beyond funding (contacts, mentors, advisors,
+            operative support)
+            <br />
+            How the funding will be used.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Vision",
+      content: (
+        <div>
+          <h1>Vision (Closing slide)</h1>
+          <p className="text-lg">
+            Big picture impact of Showy
+            <br />
+            What it means for investors, the industry, and the world
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Contact Information",
+      content: (
+        <div>
+          <h1>Contact Information</h1>
+          <p className="text-lg">
+            LOGO
+            <br />
+            Positioning statement or power words,
+            <br />
+            <br />
+            Thank you,
+            <br />
+            Rei Romero
+            <br />
+            rei@showy.tv
+            <br />
+            phone
+          </p>
         </div>
       ),
     },
@@ -126,20 +186,24 @@ function App() {
           <li>Email</li>
           <li>Company</li>
           <li>Role (select): VC, Angel, LP, GP, Operator</li>
+          <li>current: {current}</li>
         </ul>
       </div>
       // Your presentation is sized based on the width and height of // our
       parent element. Make sure the parent is not 0-height.
      */}
-      <span className="hidden absolute -z-40">{isCurrent}</span>
-      <div
-        className="reveal text-indigo-200  bg-gradient-to-tl from-slate-950 via-black to-slate-950"
-        ref={deckDivRef}
-      >
-        <div className="slides font-sans">
-          {slides.map((slide, index) => (
-            <section key={index}>{slide.content}</section>
-          ))}
+      <span className="hidden absolute -z-40">{current}</span>
+      <div className="absolute inset-0 p-4 bg-gradient-to-tl from-slate-950 via-black to-slate-950">
+        <div className="reveal text-indigo-200 " ref={deckDivRef}>
+          <div className="slides font-sans">
+            {slides.map((slide, index) => (
+              <section key={index}>
+                {cloneElement(slide.content, {
+                  current: current === 0 || current === index,
+                })}
+              </section>
+            ))}
+          </div>
         </div>
       </div>
     </>

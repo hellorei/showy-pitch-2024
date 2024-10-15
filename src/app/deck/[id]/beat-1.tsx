@@ -1,33 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
-export default function DeckPage() {
-  const [currentSlide, setCurrentSlide] = useState<string | null>(null);
-  // Function to get the current slide from the URL
-  const getCurrentSlide = () => {
-    const currentHref = window.location.href;
-    return currentHref.split("/").pop(); // Assuming slide number is in the URL path
-  };
-
-  useEffect(() => {
-    const updateSlide = () => {
-      const slide = getCurrentSlide();
-      setCurrentSlide(String(slide));
-    };
-
-    // Update slide on initial render
-    updateSlide();
-
-    // Listen to URL changes if necessary
-    window.addEventListener("popstate", updateSlide);
-
-    return () => {
-      window.removeEventListener("popstate", updateSlide);
-    };
-  }, [window.location.href]);
-
+export default function DeckPage({ current }: { current?: boolean }) {
   // Framer Motion Variants for Bounce Effect
   const bounceVariants = {
     initial: { rotate: 0 }, // Start at 0 degrees
@@ -65,7 +40,7 @@ export default function DeckPage() {
           <div className="flex text-[17.5rem] font-narrow font-semibold pl-3 leading-[0.7] uppercase tracking-tight">
             M
             <div>
-              {currentSlide === "2" ? (
+              {current ? (
                 <motion.span
                   id="e"
                   initial="initial"

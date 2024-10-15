@@ -3,6 +3,6 @@ import Deck from "./Deck";
 
 // export const metadata: Metadata = pageMetadata;
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   return <Deck />;
 }

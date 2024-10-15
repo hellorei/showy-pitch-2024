@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   const rectRef = useRef(null);
   const rectRefB = useRef(null);
 

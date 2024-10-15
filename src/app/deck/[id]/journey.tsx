@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   const rectRef = useRef(null);
   const rectRefB = useRef(null);
 
@@ -38,7 +38,7 @@ export default function DeckPage() {
           size={14}
         />
       ),
-      key: "200+ demos at NAB",
+      key: "Build our first concept and did 200+ demos at NAB",
       summary: ", garnering enterprise interest",
     },
     {
@@ -123,6 +123,26 @@ export default function DeckPage() {
         />
       ),
       summary: "Complexity of automation, collaboration, and AI adoption",
+    },
+    {
+      key: "Purple hairs. ",
+      icon: (
+        <Zap
+          className="stroke-indigo-400 shrink-0 grow-0 relative top-px"
+          size={14}
+        />
+      ),
+      summary: "NOT EXCLUSIVE FOR ESPN...",
+    },
+    {
+      key: "Growing but Collapsing. ",
+      icon: (
+        <Zap
+          className="stroke-indigo-400 shrink-0 grow-0 relative top-px"
+          size={14}
+        />
+      ),
+      summary: "NOT EXCLUSIVE FOR ESPN...",
     },
   ];
 

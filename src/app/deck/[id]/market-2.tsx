@@ -1,8 +1,7 @@
 import AnimatedNumber from "@/components/AnimatedNumber";
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   const market = [
     {
       title: "Content Production Mgmt.",
@@ -17,16 +16,16 @@ export default function DeckPage() {
             viewBox="5.615 2.146000000000001 139.771 34.042"
           >
             <path
-              clip-rule="evenodd"
+              clipRule="evenodd"
               d="M5.615 27.26l5.015-3.851c2.664 3.485 5.494 5.092 8.645 5.092 3.134 0 5.884-1.588 8.428-5.046l5.086 3.758c-3.67 4.986-8.232 7.62-13.514 7.62-5.265 0-9.871-2.617-13.66-7.574z"
               fill="#fff"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             />
             <path
-              clip-rule="evenodd"
+              clipRule="evenodd"
               d="M18.992 10.523l-8.925 7.71-4.126-4.797 13.07-11.29 12.967 11.299-4.145 4.78z"
               fill="#fff"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             />
             <path
               d="M51.754 30.077c-3.047 0-5.587-.99-7.647-2.97-2.06-2.008-3.075-4.582-3.075-7.723 0-3.167 1.043-5.77 3.102-7.807 2.09-2.065 4.63-3.082 7.65-3.082 3.725 0 7.025 1.61 8.946 4.13l-3.36 3.535c-1.608-1.727-3.358-2.603-5.248-2.603-1.609 0-2.935.536-4.037 1.64-1.072 1.105-1.607 2.492-1.607 4.16 0 1.612.535 2.97 1.607 4.074 1.102 1.074 2.428 1.61 4.008 1.61 2.06 0 3.867-.905 5.362-2.687l3.5 3.367c-.96 1.273-2.258 2.32-3.867 3.14-1.609.82-3.386 1.216-5.334 1.216zM66.875 8.182v21.584H61.91V8.182zm4.707 4.581c-1.664 0-2.877-1.216-2.877-2.883 0-1.613 1.27-2.83 2.877-2.83 1.61 0 2.852 1.217 2.852 2.83 0 1.667-1.243 2.886-2.852 2.886zm2.513 1.387v15.616h-4.996V14.15zm9.561 15.956c-2.456 0-4.43-.764-5.981-2.292-1.525-1.527-2.287-3.48-2.287-5.884 0-2.405.762-4.355 2.314-5.884 1.553-1.528 3.555-2.29 6.038-2.29 3.246 0 6.097 1.583 7.422 4.553l-3.978 2.095c-.79-1.33-1.891-2.01-3.33-2.01-1.045 0-1.891.34-2.57 1.02a3.526 3.526 0 0 0-.987 2.516c0 2.065 1.495 3.593 3.5 3.593 1.439 0 2.765-.792 3.33-2.008l3.98 2.375c-1.356 2.603-4.149 4.216-7.45 4.216zm24.773-.34h-5.928l-4.602-6.196-.733.68v5.516h-4.963V8.182h4.966v10.495l4.683-4.527h6.068l-6.687 6.281zm.333-8.119V8.86h5.305v12.703c0 2.347 1.355 3.479 3.303 3.479 1.918 0 3.272-1.189 3.272-3.48V8.86h5.335v12.787c0 6.167-4.263 8.487-8.607 8.487-4.318 0-8.608-2.32-8.608-8.487zm29.005-7.891c2.23 0 4.037.791 5.475 2.375 1.439 1.556 2.144 3.508 2.144 5.799 0 2.293-.733 4.243-2.171 5.856-1.441 1.583-3.246 2.377-5.419 2.377-1.723 0-3.218-.566-4.431-1.697v7.722h-4.996V14.15h4.912v1.444c1.213-1.218 2.708-1.838 4.486-1.838zm2.539 8.23c0-2.036-1.465-3.592-3.498-3.592-2.032 0-3.527 1.556-3.527 3.593 0 .99.337 1.839.987 2.546.676.707 1.523 1.047 2.54 1.047 1.015 0 1.862-.34 2.511-1.047a3.648 3.648 0 0 0 .99-2.546z"
@@ -93,9 +92,9 @@ export default function DeckPage() {
             ></path>
             <path
               fill="#F5F5F8"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M17.128 16c0-1.664-.08-3.274-.238-4.885-.105-1.109.739-2.06 1.821-2.06.924 0 1.69.687 1.769 1.585.184 1.768.264 3.538.264 5.36 0 1.82-.08 3.59-.264 5.359-.08.897-.845 1.584-1.769 1.584-1.082 0-1.926-.977-1.82-2.06.157-1.61.237-3.247.237-4.884Zm0 0v-.002V16Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
             <path
               fill="#F5F5F8"
@@ -252,25 +251,10 @@ export default function DeckPage() {
     market[2].growth - 4,
   ];
 
-  const [values, setValues] = useState(initialValues);
-  const [valuesB, setValuesB] = useState(initialValuesB);
-
-  useEffect(() => {
-    const currentHref = window.location.href;
-
-    const currentSlide = currentHref.split("/").pop();
-
-    const valuesNew = [market[0].size, market[1].size, market[2].size];
-    const valuesBNew = [market[0].growth, market[1].growth, market[2].growth];
-
-    setValues(currentSlide === "10" ? valuesNew : initialValues);
-    setValuesB(currentSlide === "10" ? valuesBNew : initialValues);
-  }, [window.location.href, initialValues, market]);
-
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        Competitive Landscape
+        Competitive Landscape {current ? "current" : "not current"}
       </p>
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
         Key competitors in our target segments.
@@ -285,7 +269,9 @@ export default function DeckPage() {
               <div className="flex flex-col">
                 <div className="flex space-x-2">
                   <div className="font-bold text-[5.5rem] tracking-tight text-emerald-400 flex items-end leading-[0.9]">
-                    <AnimatedNumber value={values[index]} />{" "}
+                    <AnimatedNumber
+                      value={current ? item.growth : initialValues[index]}
+                    />{" "}
                     <div className="text-5xl font-narrow font-semibold tracking-tight ml-0">
                       Bn
                     </div>
@@ -299,7 +285,9 @@ export default function DeckPage() {
                   )}
                 </div>
                 <div className="font-light text-5xl text-emerald-400 flex items-end leading-[0.9]">
-                  <AnimatedNumber value={valuesB[index]} />{" "}
+                  <AnimatedNumber
+                    value={current ? item.growth : initialValuesB[index]}
+                  />{" "}
                   <div className="text-3xl font-narrow font-semibold tracking-tight ml-0">
                     % CAGR
                   </div>

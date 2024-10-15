@@ -1,4 +1,4 @@
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div className="flex flex-col text-left">
       <p className="text-indigo-400 uppercase text-2xl tracking-widest pb-6">

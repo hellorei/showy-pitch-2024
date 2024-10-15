@@ -8,7 +8,7 @@ import {
   HousePlug,
 } from "lucide-react";
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   const keyPoints = [
     {
       leadingWord: "A Production Control Hub",

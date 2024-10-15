@@ -1,20 +1,8 @@
 "use client";
 
 import AnimatedNumber from "@/components/AnimatedNumber";
-import { useEffect, useState } from "react";
 
-export default function DeckPage() {
-  const [value, setValue] = useState(0);
-  const [valueTools, setValueTools] = useState(0);
-
-  useEffect(() => {
-    const currentHref = window.location.href;
-
-    const currentSlide = currentHref.split("/").pop();
-    setValue(currentSlide === "3" ? 30 : 1);
-    setValueTools(currentSlide === "3" ? 15 : 3);
-  }, [window.location.href]);
-
+export default function DeckPage({ current }: { current?: boolean }) {
   const keyPoints = [
     {
       leadingWord: "Poor",
@@ -51,7 +39,7 @@ export default function DeckPage() {
         <div className="text-left mb-0 flex flex-col pt-4 pr-12">
           <div className="flex font-narrow space-x-4 pt-4">
             <div className="font-semibold text-[11.5rem] tracking-tight text-emerald-400 flex items-end leading-[0.9] relative -top-6">
-              <AnimatedNumber value={valueTools} />{" "}
+              <AnimatedNumber value={current ? 30 : 1} />{" "}
             </div>
             <div className="font-sans text-[3.25rem] leading-[0.86em] font-light uppercase">
               average tools per creator
@@ -62,7 +50,7 @@ export default function DeckPage() {
           </div>
           <div className="flex font-narrow space-x-4 pt-4">
             <div className="font-semibold text-[11.5rem] tracking-tight text-emerald-400 flex items-end leading-[0.9] relative -top-6">
-              <AnimatedNumber value={value} />{" "}
+              <AnimatedNumber value={current ? 15 : 3} />{" "}
               <span className="text-8xl font-semibold tracking-normal ml-0">
                 %
               </span>

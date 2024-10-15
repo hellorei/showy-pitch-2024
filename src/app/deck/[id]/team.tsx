@@ -7,7 +7,7 @@ import {
   Tv,
 } from "lucide-react";
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   const founders = [
     {
       name: "Rei Romero",
@@ -215,6 +215,36 @@ export default function DeckPage() {
         </div>
         <div className="flex flex-col items-start justify-start">
           <h1 className="text-2xl font-narrow mb-2 ">Team</h1>
+          <div className="text-sm text-left">
+            Key Partnerships & Planned Hires:
+            <br />• Strategic staffing partnership with Webstarted
+            <br />• Global hiring enabled through Deel
+            <br />• Actively recruiting: CTO, Lead Engineer, Head of Product
+            <br />• Direct access to top Erlang and Go talent
+            <br />• Supported by GCP partner agencies and Google contacts
+            <br />
+            <br />
+            Team Strategy:
+            <br />• 16% ESOP to attract and retain top talent
+            <br />• Dedicated pools for key employees and future advisors
+            <br />• Focus on building a diverse, global team of industry experts
+            <br />
+            <br />
+            Advisory Network:
+            <br />• we talked to many industry experts and consulted with, we
+            are now in the process of selecting the right advisors that balance
+            the different areas we want to cover: A, B, C AREAS
+            <br />
+            <br />
+            Ronen:
+            <br />• Someone with deep understanding of the creators world
+            (YouTube / Twitch / Instagram / TikTok)
+            <br />• Someone on Agencies & Advertising
+            <br />• Hires: Lead Engineer, AI Guy
+            <br />• People from Discord, StreamDeck, Creator Space...
+            <br />• Humility: tried multiple ways, learned a lot, we persevered,
+            fuck up a lot, we think this is the right way
+          </div>
         </div>
       </div>
     </div>

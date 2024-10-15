@@ -20,7 +20,7 @@ import {
   X,
 } from "lucide-react";
 
-export default function DeckPage() {
+export default function DeckPage({ current }: { current?: boolean }) {
   const market = [
     {
       variable: "Users",

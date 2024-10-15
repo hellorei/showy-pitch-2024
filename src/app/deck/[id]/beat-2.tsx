@@ -4,8 +4,8 @@ import AnimatedNumber from "@/components/AnimatedNumber";
 import { useEffect, useState } from "react";
 
 export default function DeckPage() {
-  let [value, setValue] = useState(0);
-  let [valueTools, setValueTools] = useState(0);
+  const [value, setValue] = useState(0);
+  const [valueTools, setValueTools] = useState(0);
 
   useEffect(() => {
     const currentHref = window.location.href;
@@ -13,47 +13,7 @@ export default function DeckPage() {
     const currentSlide = currentHref.split("/").pop();
     setValue(currentSlide === "3" ? 30 : 1);
     setValueTools(currentSlide === "3" ? 15 : 3);
-  }, [window.location.href]);
-
-  /*
-  const keyPoints = [
-    {
-      title: "Digital Assets Manager",
-      summary: "Frame.io, Vimeo, Bynder",
-      keys: [
-        "Too narrow (video-only)",
-        "Disconnected from real workflows",
-        "Manual processes persist",
-      ],
-      stat: "60% spend more time on administrative tasks than actual creative work",
-    },
-    {
-      title: "Storage & Sharing",
-      summary: "Drive, DropBox, WeTransfer",
-      keys: [
-        "Reliance on general storage",
-        'Insecure "big file" transfers',
-        "Risk of content leaks",
-      ],
-      stat: "Waste up to 20 hours/mo searching for digital assets",
-    },
-    {
-      title: "Project Management",
-      summary: "Monday, Asana, ClickUp",
-      keys: [
-        "Unsuitable for non-linear creative processes",
-        "Force use of multiple miscellaneous tools",
-      ],
-      stat: "60% of creatives spend more time on administrative tasks than actual creative work",
-    },
-    {
-      title: "Random Tools",
-      summary: "",
-      keys: ["PowerPoint: ", "Trello, Pinterest", "Spreadsheets & Docs:"],
-      stat: "83% of creative professionals report that poor collaboration tools negatively impact their productivity",
-    },
-  ];
-  */
+  }, []);
 
   const keyPoints = [
     {

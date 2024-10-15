@@ -26,7 +26,7 @@ export default function DeckPage() {
          */}
         </div>
       </div>
-      <img src="/Mobflame_Emitter.gif" />
+      <img src="/Mobflame_Emitter.gif" alt="Flame Icon" />
     </div>
   );
 }

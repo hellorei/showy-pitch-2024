@@ -1,6 +1,5 @@
 "use client";
 // App.tsx
-import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
@@ -20,9 +19,6 @@ import Team from "./team";
 
 function App() {
   const [isCurrent, setIsCurrent] = useState(0);
-
-  const path = usePathname();
-  const searchParams = useSearchParams();
 
   const deckDivRef = useRef<HTMLDivElement>(null); // reference to deck container div
   const deckRef = useRef<Reveal.Api | null>(null); // reference to deck reveal instance
@@ -135,6 +131,7 @@ function App() {
       // Your presentation is sized based on the width and height of // our
       parent element. Make sure the parent is not 0-height.
      */}
+      <span className="hidden absolute -z-40">{isCurrent}</span>
       <div
         className="reveal text-indigo-200  bg-gradient-to-tl from-slate-950 via-black to-slate-950"
         ref={deckDivRef}

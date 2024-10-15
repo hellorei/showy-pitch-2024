@@ -69,7 +69,7 @@ export default function DeckPage() {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-6 mr-auto text-left">
-        What if creators didn't have to
+        What if creators didn{"'"}t have to
         <br />
         struggle with all of this complexity?
       </p>

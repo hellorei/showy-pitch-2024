@@ -27,7 +27,7 @@ export default function DeckPage() {
             <div className="border-b border-dashed border-indigo-400 grow"></div>
           </div>
           <div className="relative object-contain flex items-center justify-end">
-            <img src="/pot.gif" className="h-auto" />
+            <img src="/pot.gif" className="h-auto" alt="Pot Icon" />
           </div>
         </div>
         <div className="flex flex-col col-span-2 self-center relative left-12">

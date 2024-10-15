@@ -12,15 +12,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
 
-    div: (props: any) => <div {...props} />,
+    div: (props) => <div {...props} />,
 
-    card: (props: any) => (
+    card: (props) => (
       <div className="rounded-xl bg-black/50 dark:bg-white/50 p-4 shadow-md">
         {props.children}
       </div>
     ),
 
-    AnimatedNumber: (props: any) => <AnimatedNumber value={props.value} />,
+    AnimatedNumber: (props) => <AnimatedNumber value={props.value} />,
     ...components,
   };
 }

@@ -252,8 +252,8 @@ export default function DeckPage() {
     market[2].growth - 4,
   ];
 
-  let [values, setValues] = useState(initialValues);
-  let [valuesB, setValuesB] = useState(initialValuesB);
+  const [values, setValues] = useState(initialValues);
+  const [valuesB, setValuesB] = useState(initialValuesB);
 
   useEffect(() => {
     const currentHref = window.location.href;
@@ -265,7 +265,7 @@ export default function DeckPage() {
 
     setValues(currentSlide === "10" ? valuesNew : initialValues);
     setValuesB(currentSlide === "10" ? valuesBNew : initialValues);
-  }, [window.location.href]);
+  }, [window.location.href, initialValues, market]);
 
   return (
     <div>

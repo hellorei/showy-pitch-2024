@@ -6,8 +6,8 @@ import { motion, useSpring, useTransform } from "framer-motion";
 import { useEffect } from "react";
 
 export default function AnimatedNumber({ value }: { value: number }) {
-  let spring = useSpring(value, { mass: 0.8, stiffness: 75, damping: 15 });
-  let display = useTransform(spring, (current) =>
+  const spring = useSpring(value, { mass: 0.8, stiffness: 75, damping: 15 });
+  const display = useTransform(spring, (current) =>
     Math.round(current).toLocaleString()
   );
 

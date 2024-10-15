@@ -186,6 +186,7 @@ export default function DeckPage() {
                 <img
                   src={item.image}
                   className="w-40 aspect-square rounded-[3rem] mx-auto"
+                  alt={`${item.name}'s Picture`}
                 />
                 <div className="my-4 flex flex-col items-start justify-start">
                   <h1 className="text-xl text-emerald-400 tracking-tight font-semibold">

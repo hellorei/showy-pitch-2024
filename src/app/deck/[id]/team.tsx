@@ -1,11 +1,4 @@
-import {
-  Award,
-  Clapperboard,
-  Lightbulb,
-  PocketKnife,
-  Rocket,
-  Tv,
-} from "lucide-react";
+import { Check, Clapperboard, PocketKnife } from "lucide-react";
 
 export default function DeckPage({ current }: { current?: boolean }) {
   console.log(current);
@@ -14,30 +7,31 @@ export default function DeckPage({ current }: { current?: boolean }) {
       name: "Rei Romero",
       title: "Co-Founder & CEO",
       image: "/rei.jpg",
+      functions: (
+        <>
+          Designer & Engineer in tech,
+          <br />
+          digital products, and innovation
+        </>
+      ),
       bio: [
+        // {
+        //   summary:
+        //     "Innovation consultant expert in digital products & technology.",
+        //   icon: (
+        //     <Lightbulb
+        //       className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
+        //       size={14}
+        //     />
+        //   ),
+        // },
         {
-          summary:
-            "Innovation consultant expert in digital products & technology.",
-          icon: (
-            <Lightbulb
-              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
+          summary: (
+            <>
+              10+ years in Strategy, Products,
+              <br />& Tech for brands in 30+ countries.
+            </>
           ),
-        },
-        {
-          summary:
-            "10+ years building & launching F500 products in 30+ countries.",
-          icon: (
-            <Rocket
-              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          summary:
-            "Specialist in innovation strategy, design thinking, user experience, and solutions engineering.",
           icon: (
             <PocketKnife
               className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
@@ -45,6 +39,16 @@ export default function DeckPage({ current }: { current?: boolean }) {
             />
           ),
         },
+        // {
+        //   summary:
+        //     "Specialist in innovation strategy, design thinking, UXD, and solutions engineering.",
+        //   icon: (
+        //     <PocketKnife
+        //       className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
+        //       size={14}
+        //     />
+        //   ),
+        // },
       ],
       logos: (
         <div className="transform scale-75">
@@ -85,19 +89,25 @@ export default function DeckPage({ current }: { current?: boolean }) {
       name: "Ronen Lasry",
       title: "Co-Founder & COO",
       image: "/ronen.jpg",
+      functions: (
+        <>
+          Award-winning producer, director
+          <br />& broadcast solutions expert
+        </>
+      ),
       bio: [
+        // {
+        //   summary:
+        //     "Award-winning producer, director, and technical solutions expert.",
+        //   icon: (
+        //     <Award
+        //       className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
+        //       size={14}
+        //     />
+        //   ),
+        // },
         {
-          summary:
-            "Award-winning producer, director, and technical solutions expert.",
-          icon: (
-            <Award
-              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          summary: "15+ years in Television and Broadcasting in Hollywood.",
+          summary: <>15+ years in Television and Broadcasting in Hollywood</>,
           icon: (
             <Clapperboard
               className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
@@ -105,16 +115,16 @@ export default function DeckPage({ current }: { current?: boolean }) {
             />
           ),
         },
-        {
-          summary:
-            "Specialist in real-time graphics, interactive media,  AR/VR, and web technologies for broadcast.",
-          icon: (
-            <Tv
-              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
+        // {
+        //   summary:
+        //     "Specialist in real-time graphics, interactive media,  AR/VR, and web tech for broadcast.",
+        //   icon: (
+        //     <Tv
+        //       className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
+        //       size={14}
+        //     />
+        //   ),
+        // },
       ],
       logos: (
         <div className="transform scale-75">
@@ -169,16 +179,88 @@ export default function DeckPage({ current }: { current?: boolean }) {
   ];
   return (
     <div>
-      <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
+      <p className="text-indigo-400 uppercase text-2xl tracking-wide font-medium pb-2 mr-auto text-left">
         The Team
       </p>
+      {/* 
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
         Industry insiders with technical expertise.
       </p>
-      <div className="grid grid-cols-2 gap-10 items-start justify-start py-4">
-        <div className="flex flex-col items-start justify-start">
-          <h1 className="text-2xl font-narrow mb-2 ">Founders</h1>
-          <div className="grid grid-cols-2 gap-6 w-full">
+        */}
+      <div className="grid grid-cols-4 gap-8 items-start justify-start py-4">
+        <div className="flex flex-col items-start justify-start col-span-2">
+          <div className="text-sm text-left pt-2">
+            <h1 className="font-narrow text-8xl uppercase leading-[0.9] tracking-tighter font-semibold mb-8">
+              For Creators
+              <br />
+              by Creatives
+            </h1>
+            <div className="text-3xl tracking-tight">
+              We{"'"}ve been in the trenches with
+              <br />
+              all the content value chain.
+            </div>
+            <div className="border-b border-dashed border-slate-700 w-full shrink-0 my-4"></div>
+            <div className="grid grid-cols-2 text-lg pt-2 text-white/70 tracking-tight gap-4 leading-[1.2]">
+              <div>
+                <div className="text-base text-indigo-400">
+                  From working with:
+                </div>
+                <ul className="space-y-1 py-1">
+                  <li>
+                    <Check
+                      className="stroke-indigo-400 shrink-0 grow-0 mr-2 relative bottom-0.5 inline-block"
+                      size={16}
+                    />
+                    Creative agencies
+                  </li>
+                  <li>
+                    <Check
+                      className="stroke-indigo-400 shrink-0 grow-0 mr-2 relative bottom-0.5 inline-block"
+                      size={16}
+                    />
+                    Marketing departments
+                  </li>
+                  <li>
+                    <Check
+                      className="stroke-indigo-400 shrink-0 grow-0 mr-2 relative bottom-0.5 inline-block"
+                      size={16}
+                    />
+                    Product teams
+                  </li>
+                </ul>
+              </div>
+              <div className="pl-8">
+                <div className="text-base text-indigo-400">To producing:</div>
+                <ul className="space-y-1 py-1">
+                  <li>
+                    <Check
+                      className="stroke-indigo-400 shrink-0 grow-0 mr-2 relative bottom-0.5 inline-block"
+                      size={16}
+                    />
+                    Web content
+                  </li>
+                  <li>
+                    <Check
+                      className="stroke-indigo-400 shrink-0 grow-0 mr-2 relative bottom-0.5 inline-block"
+                      size={16}
+                    />
+                    TV shows
+                  </li>
+                  <li>
+                    <Check
+                      className="stroke-indigo-400 shrink-0 grow-0 mr-2 relative bottom-0.5 inline-block"
+                      size={16}
+                    />
+                    Films
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-start justify-start col-span-2">
+          <div className="grid grid-cols-2 gap-4 w-full">
             {founders.map((item, index) => (
               <div
                 key={`founder-${index}`}
@@ -186,25 +268,26 @@ export default function DeckPage({ current }: { current?: boolean }) {
               >
                 <img
                   src={item.image}
-                  className="w-40 aspect-square rounded-[3rem] mx-auto"
+                  className="w-48 aspect-square rounded-[3rem] mx-auto"
                   alt={`${item.name}'s Picture`}
                 />
-                <div className="my-4 flex flex-col items-start justify-start">
-                  <h1 className="text-xl text-emerald-400 tracking-tight font-semibold">
+                <div className="my-4 flex flex-col items-center justify-center mx-auto">
+                  <h1 className="text-xl text-white tracking-tight font-semibold py-2 ">
                     {item.name}
                   </h1>
-                  <h1 className="text-sm tracking-tight font-normal">
-                    {item.title}
+                  <h1 className="text-sm tracking-tight font-normal mb-2 text-slate-300">
+                    {/* {item.title} */}
+                    {item.functions}
                   </h1>
                 </div>
                 <div className="border-b border-dashed border-slate-700 w-full shrink-0 my-4"></div>
-                <ol className="flex flex-col items-left text-left space-y-2 pt-3 pb-1">
+                <ol className="flex flex-col items-center px-1 mx-auto text-center space-y-2 pt-3 pb-1">
                   {item?.bio?.map((subitem, index) => (
                     <li
                       key={`traction-${index}`}
-                      className="text-xs text-slate-300 flex space-x-1 items-start"
+                      className="text-xs text-white/70 flex space-x-1 items-start"
                     >
-                      {subitem.icon}
+                      {/* {subitem.icon} */}
                       <div>{subitem.summary}</div>
                     </li>
                   ))}
@@ -214,40 +297,22 @@ export default function DeckPage({ current }: { current?: boolean }) {
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start">
-          <h1 className="text-2xl font-narrow mb-2 ">Team</h1>
-          <div className="text-sm text-left">
-            Key Partnerships & Planned Hires:
-            <br />• Strategic staffing partnership with Webstarted
-            <br />• Global hiring enabled through Deel
-            <br />• Actively recruiting: CTO, Lead Engineer, Head of Product
-            <br />• Direct access to top Erlang and Go talent
-            <br />• Supported by GCP partner agencies and Google contacts
-            <br />
-            <br />
-            Team Strategy:
-            <br />• 16% ESOP to attract and retain top talent
-            <br />• Dedicated pools for key employees and future advisors
-            <br />• Focus on building a diverse, global team of industry experts
-            <br />
-            <br />
-            Advisory Network:
-            <br />• we talked to many industry experts and consulted with, we
-            are now in the process of selecting the right advisors that balance
-            the different areas we want to cover: A, B, C AREAS
-            <br />
-            <br />
-            Ronen:
-            <br />• Someone with deep understanding of the creators world
-            (YouTube / Twitch / Instagram / TikTok)
-            <br />• Someone on Agencies & Advertising
-            <br />• Hires: Lead Engineer, AI Guy
-            <br />• People from Discord, StreamDeck, Creator Space...
-            <br />• Humility: tried multiple ways, learned a lot, we persevered,
-            fuck up a lot, we think this is the right way
-          </div>
-        </div>
       </div>
     </div>
   );
 }
+
+// numeros actualizados
+
+// FOCUS ON CREATING !!!!
+// seamless  AI
+
+// By creators
+
+// REI ->
+
+// MARKET Million
+
+// Cual es el revenue CUANTO COBRAR Y COMO LLEGO A DUPLICAR VALOR O DINERO
+
+// REI agregar creator

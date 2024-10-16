@@ -1,94 +1,30 @@
-import clsx from "clsx";
-import {
-  Activity,
-  Atom,
-  Brain,
-  ChevronRight,
-  Combine,
-  HousePlug,
-} from "lucide-react";
+import { ChevronsRight } from "lucide-react";
 
 export default function DeckPage({ current }: { current?: boolean }) {
   console.log(current);
-  const keyPoints = [
-    {
-      leadingWord: "A Production Control Hub",
-      trailingPhrase: "That increases productivity & sparks creativity",
-      icon: (
-        <Atom
-          className="text-emerald-300 shrink-0 grow-0"
-          size={48}
-          strokeWidth={1}
-        />
-      ),
-    },
-    {
-      leadingWord: "With Frictionless Assets Management",
-      trailingPhrase: "That handle obstacles at the backstage",
-      icon: (
-        <Combine
-          className="text-emerald-300 shrink-0 grow-0"
-          size={48}
-          strokeWidth={1}
-        />
-      ),
-    },
-    {
-      leadingWord: "And Real-time collaboration",
-      trailingPhrase: "For non-linear creative processes",
-      icon: (
-        <Activity
-          className="text-emerald-300 shrink-0 grow-0"
-          size={48}
-          strokeWidth={1}
-        />
-      ),
-    },
-    {
-      leadingWord: "Backed by AI-powered tools ",
-      trailingPhrase: "To increase the pace of content production",
-      icon: (
-        <Brain
-          className="text-emerald-300 shrink-0 grow-0"
-          size={48}
-          strokeWidth={1}
-        />
-      ),
-    },
-    {
-      leadingWord: "In a Unified platform ",
-      trailingPhrase: "That lives in harmony with the existing tooling chaos",
-      icon: (
-        <HousePlug
-          className="text-emerald-300 shrink-0 grow-0"
-          size={48}
-          strokeWidth={1}
-        />
-      ),
-    },
-  ];
+
   return (
-    <div>
-      <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-6 mr-auto text-left">
-        What if creators didn{"'"}t have to
-        <br />
-        struggle with all of this complexity?
+    <div className="pt-16">
+      <p className="text-indigo-400 uppercase text-2xl tracking-wide font-medium pb-6 mr-auto text-left">
+        What if creators could just...
       </p>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 h-80">
         <div className="text-left mb-0 flex flex-col pt-0">
+          {/* 
           <p className="text-slate-400 text-4xl tracking-tight font-normal pb-1 mr-auto text-left">
             And could just...
           </p>
-          <div className="text-[8.75rem] font-narrow font-semibold leading-[0.8] uppercase tracking-tighter relative right-2 pb-4">
+           */}
+          <div className="text-[9.9rem] font-narrow font-semibold leading-[0.8] uppercase tracking-tighter relative right-2 pb-4">
             Focus on
             <br />
             creating
           </div>
+          {/* 
           <div className="flex space-x-2 items-center my-2">
             <p className="text-emerald-400 text-4xl tracking-tight font-normal pb-1 ">
               Together on
             </p>
-            {/* <div className="border-b border-dashed border-emerald-400 grow"></div> */}
             <div className="uppercase tracking-wide text-xs text-emerald-400 flex">
               {
                 // make an array of 20 chevrons
@@ -105,60 +41,75 @@ export default function DeckPage({ current }: { current?: boolean }) {
               }
             </div>
           </div>
+           */}
         </div>
-        <div className="flex flex-col text-lg text-left items-start justify-start pl-12">
-          <ul className="divide-y divide-indigo-400/40">
-            {keyPoints.map((keyPoint, index) => (
-              <li key={index} className="py-4 flex space-x-4">
-                {keyPoint.icon}
-                <div className="flex-none">
-                  <div className="font-bold text-indigo-400 text-xl tracking-wide font-narrow uppercase mb-1">
-                    <span className="text-white">{keyPoint.leadingWord} </span>
-                  </div>
-                  <div className="text-[1rem] leading-4 text-slate-300">
-                    {keyPoint.trailingPhrase}
-                  </div>
-                </div>
-                {/* 
-              <div className="text-sm ml-2 opacity-40 font-normal">
-                {keyPoint.summary}
-              </div>
-                */}
-                {/* <div className="text-sm">
-                <strong className="font-bold">{keyPoint.stat}</strong>
-              </div> */}
-                {/* 
-              <ul className="text-sm ml-1 list-disc list-inside opacity-80">
-                {keyPoint.keys.map((key, index) => (
-                  <li key={index} className="text-sm">
-                    {key}
-                  </li>
-                ))}
-              </ul>
-               */}
-              </li>
-            ))}
-          </ul>
+        <div className="flex flex-col text-lg text-left items-start justify-start pl-10 relative bottom-28">
+          <img src="/pot.gif" className="h-auto" alt="Pot Icon" />
         </div>
       </div>
+      <div className="flex space-x-12 my-2 tracking-tight text-xl w-full items-center">
+        <div className="">
+          <ChevronsRight
+            className="text-fuchsia-400 grow-0 shrink-0 inline-block mb-1"
+            size={24}
+            strokeWidth={2}
+          />
+          Less tools
+        </div>
+        {/* <div className="">
+          <ChevronsRight
+            className="text-fuchsia-400 grow-0 shrink-0 inline-block mb-1"
+            size={24}
+            strokeWidth={2}
+          />
+          Made for Creatives
+        </div> */}
+        <div className="">
+          <ChevronsRight
+            className="text-fuchsia-400 grow-0 shrink-0 inline-block mb-1"
+            size={24}
+            strokeWidth={2}
+          />
+          Easy to Roll
+        </div>
+        <div className="">
+          <ChevronsRight
+            className="text-fuchsia-400 grow-0 shrink-0 inline-block mb-1"
+            size={24}
+            strokeWidth={2}
+          />
+          All in one place
+        </div>
+      </div>
+      {/* 
+      <ul className="grid grid-cols-4 space-x-4">
+        {keyPoints.map((keyPoint, index) => (
+          <li
+            key={index}
+            className="py-4 flex flex-col items-start justify-start space-y-4"
+          >
+            <div className="flex-none text-left">
+              <div className="font-semibold text-emerald-300 text-xl tracking-tight font-sans mb-1 flex">
+                {keyPoint.icon}
+
+                <div className="text-white">
+                  <span className="text-emerald-300">
+                    {keyPoint.leadingWord}{" "}
+                  </span>
+                  <br />
+                  <span className="font-sans font-normal ">
+                    {keyPoint.title}
+                  </span>
+                </div>
+              </div>
+              <div className="text-[1rem] leading-4 text-slate-400">
+                {keyPoint.summary}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+       */}
     </div>
-    //   <div className="flex-col">
-    //     <div className="text-left mb-0">
-    //       <p className="text-indigo-400 uppercase text-2xl tracking-widest pb-6">
-    //       </p>
-    //       <div className="grid grid-cols-5 gap-4">
-    //         {keyPoints.map((keyPoint, index) => (
-    //           <div key={index} className="text-left mb-0 flex flex-col">
-    //             <div className="flex font-narrow">
-    //               <div className="text-xl text-slate-300">
-    //                 <strong className="text-white">{keyPoint.leadingWord}</strong>
-    //                 <span>{keyPoint.trailingPhrase}</span>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </div>
   );
 }

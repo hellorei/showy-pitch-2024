@@ -1,30 +1,32 @@
 import clsx from "clsx";
 import {
+  BrainCircuit,
   Building2,
+  Cpu,
   CreditCard,
-  Equal,
-  Expand,
-  FileChartColumn,
-  Handshake,
-  HeartHandshake,
-  Leaf,
-  Lock,
-  Megaphone,
-  Minus,
   Package,
-  RefreshCw,
-  Target,
-  UserCheck,
+  RadioTower,
+  RefreshCcwDot,
+  Server,
+  ServerCrash,
+  Store,
+  User,
+  UserCog,
   Users,
-  Waypoints,
-  X,
 } from "lucide-react";
 
 export default function DeckPage({ current }: { current?: boolean }) {
   console.log(current);
   const market = [
     {
-      variable: "Users",
+      variable: "Subscriptions",
+      icon: (
+        <RefreshCcwDot
+          className="stroke-emerald-300 shrink-0 grow-0 relative top-px"
+          size={40}
+          strokeWidth={1}
+        />
+      ),
       variableSub: (
         <>
           <div className="grid grid-cols-2">
@@ -46,137 +48,72 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
       problems: [
         {
-          key: "Growth Hack",
+          key: (
+            <>
+              Hobby <span className="opacity-80 text-sm relative">(Free)</span>
+            </>
+          ),
           summary:
             "Aggressive content marketing, influencer partnerships, community building, SEM/SEO.",
           icon: (
-            <Leaf
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <User
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
         {
-          key: "Early adopters",
+          key: (
+            <>
+              Pro{" "}
+              <span className="opacity-80 text-sm relative">
+                (Individual Professionals)
+              </span>
+            </>
+          ),
           summary: "from direct industry connections & partners.",
           icon: (
-            <HeartHandshake
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <UserCog
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
         {
-          key: "Network Effect",
+          key: "Teams",
           summary: "Invitations, sharing, & collaboration organic growth.",
           icon: (
-            <Waypoints
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <Users
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
         {
-          key: "Brand Partnerships",
+          key: "Enterprise",
           summary: "Software Integrations & Industry Partners.",
           icon: (
-            <Megaphone
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <Building2
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
       ],
     },
     {
-      variable: (
-        <div className="flex items-center space-x-1 relative">
-          <X
-            className="stroke-indigo-400 absolute top-4 -left-12"
-            size={24}
-            strokeWidth={4}
-          />
-          <X
-            className="stroke-indigo-400 absolute top-4 -right-14"
-            size={24}
-            strokeWidth={4}
-          />
-          <span className="font-light opacity-50">(</span>
-          <span>CR</span>
-          <Minus
-            className="stroke-indigo-400 relative top-1"
-            size={24}
-            strokeWidth={4}
-          />
-          <span>Churn</span>
-          <span className="font-light opacity-50">)</span>
-        </div>
+      variable: "Pay-as-You-Go",
+      icon: (
+        <CreditCard
+          className="stroke-emerald-300 shrink-0 grow-0 relative top-px"
+          size={40}
+          strokeWidth={1}
+        />
       ),
-      variableSub: (
-        <>
-          <div className="grid grid-cols-2">
-            <span className="text-right">Pre-seed:</span>
-            <span className="font-semibold pl-2">~4% CR</span>
-          </div>
-          <div className="grid grid-cols-2">
-            <span className="text-right">Seed:</span>{" "}
-            <span className="font-semibold pl-2">~3.5% CR</span>
-          </div>
-        </>
-      ),
-      case: (
-        <>
-          <span>Customer Acquisition</span>
-          <br />
-          <span>& Retention Strategy</span>
-        </>
-      ),
-      problems: [
-        {
-          key: "Direct Enterprise Sales",
-          summary: "agencies, content networks & large teams.",
-          icon: (
-            <Users
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          key: "Flexible pricing structure",
-          summary: "for solo professionals & small teams.",
-          icon: (
-            <UserCheck
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          key: "Sales Partners",
-          summary: "Affiliates, Resellers & Systems Integrators.",
-          icon: (
-            <Handshake
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          key: "Vendor lock-in",
-          summary:
-            "from workflow adoption & assets storage volume increasing LTV (Lifetime Value).",
-          icon: (
-            <Lock
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-      ],
-    },
-    {
-      variable: "ARPU",
       variableSub: (
         <>
           <div className="grid grid-cols-2">
@@ -196,61 +133,35 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
       problems: [
         {
-          key: "Subscriptions",
+          key: "Extended Storage",
           summary: "Free, Pro, & Teams.",
           icon: (
-            <RefreshCw
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <Server
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
         {
-          key: "Enterprise",
+          key: "Extended Distribution",
           summary: "Plan & Services.",
           icon: (
-            <Building2
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <RadioTower
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
         {
-          key: "Pay-as-You-Go",
+          key: "Content Intelligence API",
           summary: "for additional Storage, Bandwidth, AI Analysis.",
           icon: (
-            <CreditCard
-              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          key: <span className="text-indigo-400">Future Revenue Streams</span>,
-          summary: "",
-          icon: <></>,
-        },
-        {
-          key: <span className="text-slate-400">Marketplace</span>,
-          summary: (
-            <span className="opacity-70">
-              SDK & ecosystem for third-party extensions.
-            </span>
-          ),
-          icon: (
-            <Package
-              className="stroke-slate-400 opacity-60 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
-            />
-          ),
-        },
-        {
-          key: <span className="text-slate-400">Data Insights</span>,
-          summary: <span className="opacity-70">Telemetry & Analytics.</span>,
-          icon: (
-            <FileChartColumn
-              className="stroke-slate-400 opacity-60 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <Cpu
+              className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
@@ -258,15 +169,13 @@ export default function DeckPage({ current }: { current?: boolean }) {
     },
     ,
     {
-      variable: (
-        <div className="flex items-center space-x-1 relative">
-          <Equal
-            className="stroke-emerald-400 absolute top-4 -left-20"
-            size={24}
-            strokeWidth={4}
-          />
-          <span>Revenue</span>
-        </div>
+      variable: "Marketplace",
+      icon: (
+        <Store
+          className="stroke-indigo-400 shrink-0 grow-0 relative top-px"
+          size={40}
+          strokeWidth={1}
+        />
       ),
       variableSub: (
         <>
@@ -287,69 +196,40 @@ export default function DeckPage({ current }: { current?: boolean }) {
         </>
       ),
       problems: [
-        // {
-        //   key: "Cost Efficient.",
-        //   summary:
-        //     "Direct costs primarily tied to pay-as-you-go usage, enabling revenue to scale faster than infrastructure costs.",
-        //   icon: (
-        //     <X
-        //       className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
-        //       size={14}
-        //     />
-        //   ),
-        // },
         {
-          key: (
-            <>
-              Scalable Snowball Effect.
-              <br />
-            </>
+          key: "Apps",
+          summary: (
+            <span className="opacity-70">
+              SDK & ecosystem for third-party extensions.
+            </span>
           ),
-          summary:
-            "User growth drives network value, accelerating acquisition & retention while reducing UAC over time.",
           icon: (
-            <svg
-              className="fill-emerald-400 stroke-emerald-400 stroke-2 shrink-0 grow-0 mr-1 relative top-0.5"
-              height="14"
-              viewBox="0 0 48 48"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="graph_up">
-                <path d="m42.94 41.69h-34.88c-.965 0-1.75-.785-1.75-1.75v-34.88c0-.69-.56-1.25-1.25-1.25s-1.25.56-1.25 1.25v34.88c0 2.344 1.907 4.25 4.25 4.25h34.88c.69 0 1.25-.56 1.25-1.25s-.559-1.25-1.25-1.25zm-24.775-7.415c.154 0 .311-.028.463-.089 5.638-2.252 13.801-7.861 21.148-21.644l.355 4.927c.048.658.597 1.16 1.246 1.16.03 0 .061-.001.091-.003.688-.049 1.207-.648 1.157-1.336l-.62-8.597c-.029-.402-.251-.766-.596-.977-.343-.21-.77-.242-1.14-.084l-7.934 3.37c-.636.27-.932 1.003-.662 1.639.27.635 1.001.935 1.639.662l4.171-1.771c-6.967 12.998-14.556 18.245-19.784 20.333-.641.257-.953.983-.697 1.625.197.489.666.785 1.163.785zm-8.401 1.486c.031.005.431.057 1.129.057.658 0 1.583-.047 2.713-.226.682-.107 1.147-.748 1.04-1.43-.108-.683-.749-1.149-1.43-1.039-1.917.304-3.09.164-3.118.16-.678-.081-1.309.388-1.402 1.069-.094.685.384 1.315 1.068 1.409z" />
-              </g>
-            </svg>
-          ),
-        },
-        {
-          key: (
-            <>
-              Broad Revenue Model.
-              <br />
-            </>
-          ),
-          summary:
-            "Combination of subscriptions and usage-based pricing captures value across user spectrum, from individuals to enterprises.",
-          icon: (
-            <Target
-              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <Package
+              className="stroke-slate-400 opacity-80 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
         {
-          key: (
-            <>
-              Expansion Options.
-              <br />
-            </>
-          ),
-          summary:
-            "Marketplace & data insights create additional high-margin streams, increasing ARPU without proportional cost increases.",
+          key: "Pipelines",
+          summary: <span className="opacity-70">Telemetry & Analytics.</span>,
           icon: (
-            <Expand
-              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
-              size={14}
+            <ServerCrash
+              className="stroke-slate-400 opacity-80 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
+            />
+          ),
+        },
+        {
+          key: "Models",
+          summary: <span className="opacity-70">Telemetry & Analytics.</span>,
+          icon: (
+            <BrainCircuit
+              className="stroke-slate-400 opacity-80 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={24}
+              strokeWidth={1}
             />
           ),
         },
@@ -363,9 +243,9 @@ export default function DeckPage({ current }: { current?: boolean }) {
         Business Model
       </p>
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
-        Scalable Revenue, Controlled Costs.
+        Simple • Scalable • Extensible
       </p>
-      <div className="grid grid-cols-4 gap-6 items-start justify-start pb-4">
+      <div className="grid grid-cols-3 gap-6 items-start justify-start pb-4">
         {market.map((item, index) => (
           <div
             key={`market-${index}`}
@@ -376,11 +256,13 @@ export default function DeckPage({ current }: { current?: boolean }) {
           >
             <div className="flex-col relative pb-4">
               <div className="flex flex-col">
-                <div className="flex flex-col mx-auto text-center items-center justify-center">
-                  <div className="font-semibold text-[3.5rem] font-narrow uppercase tracking-tighter text-white flex items-end leading-[0.9]">
+                <div className="flex items-center justify-start space-x-2">
+                  {item?.icon}
+                  <div className="font-semibold text-5xl font-narrow uppercase tracking-tight text-white flex items-end leading-[0.9]">
                     {item?.variable}
                   </div>
                 </div>
+                {/* 
                 {item?.variableSub && (
                   <div
                     className={clsx(
@@ -390,55 +272,30 @@ export default function DeckPage({ current }: { current?: boolean }) {
                     {item.variableSub}
                   </div>
                 )}
+                 */}
               </div>
             </div>
             <div
               className={clsx(
                 "border-b border-dashed grow my-2",
-                item?.highlighted ? "border-emerald-400" : "border-indigo-400"
+                item?.highlighted ? "border-indigo-400" : "border-emerald-300"
               )}
             ></div>
             <div className="flex flex-col relative">
-              {!item?.highlighted ? (
-                <div className="text-lg leading-[1.1] my-4 text-slate-200 text-center flex items-center justify-center border rounded-xl border-slate-700 h-20">
-                  <span>{item?.case}</span>
-                </div>
-              ) : (
-                <div className="absolute -inset-4 top-4 border rounded-xl border-slate-600 bg-slate-950"></div>
-              )}
-              <ol
-                className={clsx(
-                  "flex flex-col items-left mb-4 space-y-2",
-                  item?.highlighted && "pt-8 relative top-3"
-                )}
-              >
-                {item?.problems?.map((subitem, index) => (
+              {/* <div className="text-lg leading-[1.1] my-4 text-slate-200 text-center flex items-center justify-center border rounded-xl border-slate-700 h-20">
+                <span>{item?.case}</span>
+              </div> */}
+              <ol className={clsx("flex flex-col items-left mt-4 space-y-2")}>
+                {item?.problems?.map((subitem, subindex) => (
                   <li
-                    key={`traction-${index}`}
-                    className="text-xs text-slate-400 flex space-x-1 items-start"
+                    key={`traction-${index}-${subindex}`}
+                    className={clsx(
+                      "text-lg leading-[1.1] text-slate-200 text-center flex items-center justify-start border rounded-xl border-slate-700 space-x-3",
+                      index === 0 ? "px-5 py-[0.675rem]" : "p-5"
+                    )}
                   >
                     {subitem.icon}
-                    <div>
-                      <span
-                        className={clsx(
-                          "text-white mr-1",
-
-                          item?.highlighted
-                            ? "text-base font-narrow uppercase relative bottom-1 mb-0.5 font-semibold"
-                            : "text-xs"
-                        )}
-                      >
-                        {subitem.key}
-                      </span>
-                      <span
-                        className={clsx(
-                          item?.highlighted &&
-                            "mb-0.5 relative bottom-1 text-slate-300"
-                        )}
-                      >
-                        {subitem.summary}
-                      </span>
-                    </div>
+                    <span>{subitem.key}</span>
                   </li>
                 ))}
               </ol>

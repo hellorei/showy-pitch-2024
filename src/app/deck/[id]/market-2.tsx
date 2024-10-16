@@ -1,7 +1,7 @@
-import AnimatedNumber from "@/components/AnimatedNumber";
 import { X } from "lucide-react";
 
 export default function DeckPage({ current }: { current?: boolean }) {
+  console.log(current);
   const market = [
     {
       title: "Content Production Mgmt.",
@@ -239,22 +239,10 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ],
     },
   ];
-
-  const initialValues = [
-    market[0].size - 2,
-    market[1].size - 4,
-    market[2].size - 3,
-  ];
-  const initialValuesB = [
-    market[0].growth - 3,
-    market[1].growth - 8,
-    market[2].growth - 4,
-  ];
-
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        Competitive Landscape {current ? "current" : "not current"}
+        Competitive Landscape
       </p>
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
         Key competitors in our target segments.
@@ -266,6 +254,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
             className="text-left mb-0 flex flex-col pt-4"
           >
             <div className="flex-col relative pb-4">
+              {/* 
               <div className="flex flex-col">
                 <div className="flex space-x-2">
                   <div className="font-bold text-[5.5rem] tracking-tight text-emerald-400 flex items-end leading-[0.9]">
@@ -293,6 +282,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
                   </div>
                 </div>
               </div>
+               */}
             </div>
             <div className="text-2xl text-white font-narrow font-semibold leading-[0.9] uppercase tracking-tight relative pb-4">
               {item.title}

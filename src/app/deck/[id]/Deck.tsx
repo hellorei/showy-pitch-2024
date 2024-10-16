@@ -4,16 +4,19 @@ import { cloneElement, useEffect, useRef, useState } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
+import Ask from "./ask";
 import Beat1 from "./beat-1";
 import Beat2 from "./beat-2";
-import Beat2b from "./beat-2b";
 import Beat3 from "./beat-3";
-import Beat4 from "./beat-4";
 import Beat4b from "./beat-4b";
+import Beat4bFeatures from "./beat-4bFeatures";
 import BusinessModel from "./business-model";
+import Closing from "./closing";
+import Closing2 from "./closing2";
 import Cover from "./cover";
-import Journey from "./journey";
+import End from "./end";
 import JourneyExtended from "./journey-extended";
+import Journey1 from "./journey1";
 import Market from "./market";
 import Market2 from "./market-2";
 import Team from "./team";
@@ -60,115 +63,89 @@ function App() {
   const slides = [
     {
       title: "Introduction",
-      content: <Cover />,
+      content: [<Cover key={"Cover"} />],
+      multiple: false,
     },
     {
       title: "Problem",
-      content: <Beat1 />,
+      content: [<Beat1 key={"Beat1"} />],
+      multiple: false,
     },
+    // {
+    //   title: "The Sh*w Must Go On!",
+    //   content: [<Beat2b />],
+    // multiple: false,
+    // },
     {
       title: "Pain Points",
-      content: <Beat2 />,
-    },
-    {
-      title: "The Sh*w Must Go On!",
-      content: <Beat2b />,
+      content: [<Beat2 key="Beat2" />],
+      multiple: false,
     },
     {
       title: "Solution",
-      content: <Beat3 />,
+      content: [<Beat3 key="Beat3" />],
+      multiple: false,
     },
-    {
-      title: "The Content Production Hub",
-      content: <Beat4 />,
-    },
+    // {
+    //   title: "The Content Production Hub",
+    //   content: [<Beat4 key="Beat4" />],
+    // multiple: false,
+    // },
     {
       title: "Core Features",
-      content: <Beat4b />,
+      content: [
+        <Beat4b key="Beat4b" />,
+        <Beat4bFeatures key="Beat4bFeatures" />,
+      ],
+      multiple: true,
     },
     {
       title: "Our Journey",
-      content: (
-        <>
-          <section>
-            <Journey />
-          </section>
-          <section>
-            <JourneyExtended />
-          </section>
-        </>
-      ),
+      content: [
+        <Journey1 key="Journey1" />,
+        <JourneyExtended key="JourneyExtended" />,
+      ],
+      multiple: true,
     },
     // {
-    //   title: "Our Journey 2",
-    //   content: <JourneyExtended />,
+    //   title: "Insights",
+    //   content: [<Insights key="Insights" />],
+    // multiple: false,
     // },
     {
       title: "Market",
-      content: <Market />,
-    },
-    {
-      title: "Market SOM",
-      content: <Market2 />,
+      content: [<Market key="Market" />, <Market2 key="Market2" />],
+      multiple: true,
     },
     {
       title: "Business Model",
-      content: <BusinessModel />,
+      content: [<BusinessModel key="BusinessModel" />],
+      multiple: false,
     },
     {
       title: "Team",
-      content: <Team />,
+      content: [<Team key="Team" />],
+      multiple: false,
     },
     {
       title: "The Ask",
-      content: (
-        <div>
-          <h1>The Ask</h1>
-          <p className="text-lg">
-            Funding amount
-            <br />
-            What we are looking for beyond funding (contacts, mentors, advisors,
-            operative support)
-            <br />
-            How the funding will be used.
-          </p>
-        </div>
-      ),
+      content: [<Ask key="Ask" />],
+      multiple: false,
     },
     {
       title: "Vision",
-      content: (
-        <div>
-          <h1>Vision (Closing slide)</h1>
-          <p className="text-lg">
-            Big picture impact of Showy
-            <br />
-            What it means for investors, the industry, and the world
-          </p>
-        </div>
-      ),
+      content: [<Closing key="Closing" />],
+      multiple: false,
+    },
+    {
+      title: "Vision",
+      content: [<Closing2 key="Closing2" />],
+      multiple: false,
     },
     {
       title: "Contact Information",
-      content: (
-        <div>
-          <h1>Contact Information</h1>
-          <p className="text-lg">
-            LOGO
-            <br />
-            Positioning statement or power words,
-            <br />
-            <br />
-            Thank you,
-            <br />
-            Rei Romero
-            <br />
-            rei@showy.tv
-            <br />
-            phone
-          </p>
-        </div>
-      ),
+      content: [<End key="End" />],
+      multiple: false,
     },
   ];
 
@@ -192,13 +169,38 @@ function App() {
       <div className="absolute inset-0 p-4 bg-gradient-to-tl from-slate-950 via-black to-slate-950">
         <div className="reveal text-indigo-200 " ref={deckDivRef}>
           <div className="slides font-sans">
-            {slides.map((slide, index) => (
-              <section key={index}>
-                {cloneElement(slide.content, {
-                  current: current === 0 || current === index,
-                })}
-              </section>
-            ))}
+            {slides?.map((slide, index) => {
+              if (slide.multiple) {
+                return (
+                  <section key={`slide-${index}`}>
+                    {slide.content.map((content, indexV) => {
+                      return (
+                        <section key={`slide-${index}-${indexV}`}>
+                          {cloneElement(content, {
+                            current:
+                              current === 0 ||
+                              current === indexV ||
+                              current === index,
+                          })}
+                        </section>
+                      );
+                    })}
+                  </section>
+                );
+              }
+              return slide.content.map((content, indexV) => {
+                return (
+                  <section key={`slide-${index}`}>
+                    {cloneElement(content, {
+                      current:
+                        current === 0 ||
+                        current === indexV ||
+                        current === index,
+                    })}
+                  </section>
+                );
+              });
+            })}
           </div>
         </div>
       </div>

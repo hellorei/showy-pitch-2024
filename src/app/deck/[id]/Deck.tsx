@@ -5,12 +5,14 @@ import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
 import Ask from "./ask";
+import AskFinances from "./ask-finances";
 import Beat1 from "./beat-1";
 import Beat2 from "./beat-2";
 import Beat3 from "./beat-3";
 import Beat4b from "./beat-4b";
 import Beat4bFeatures from "./beat-4bFeatures";
 import BusinessModel from "./business-model";
+import BusinessModelAllFit from "./business-model-allFit";
 import Closing from "./closing";
 import Closing2 from "./closing2";
 import Cover from "./cover";
@@ -78,7 +80,10 @@ function App() {
     // },
     {
       title: "Pain Points",
-      content: [<Beat2 key="Beat2" />],
+      content: [
+        // <Beat2Elephant key="Beat2Elephant" />,
+        <Beat2 key="Beat2" />,
+      ],
       multiple: false,
     },
     {
@@ -129,8 +134,12 @@ function App() {
     },
     {
       title: "The Ask",
-      content: [<Ask key="Ask" />],
-      multiple: false,
+      content: [
+        <Ask key="Ask" />,
+        <AskFinances key="AskFinances" />,
+        <BusinessModelAllFit key="BusinessModelAllFit" />,
+      ],
+      multiple: true,
     },
     {
       title: "Vision",
@@ -147,6 +156,11 @@ function App() {
       content: [<End key="End" />],
       multiple: false,
     },
+    // {
+    //   title: "Contact Information",
+    //   content: [<Beat4bDemo key="Beat4bDemo" />],
+    //   multiple: false,
+    // },
   ];
 
   return (

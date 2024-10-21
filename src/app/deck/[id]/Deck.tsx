@@ -4,6 +4,8 @@ import { cloneElement, useEffect, useRef, useState } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
+import { useParams, useRouter } from "next/navigation";
+import accessCodes from "../../lib/accessCodes";
 import Ask from "./ask";
 import AskFinances from "./ask-finances";
 import Beat1 from "./beat-1";
@@ -23,7 +25,15 @@ import Market from "./market";
 import Market2 from "./market-2";
 import Team from "./team";
 
-function App() {
+function Deck() {
+  // const pathname = usePathname();
+  const { id } = useParams();
+  const router = useRouter();
+
+  // const searchParams = useSearchParams();
+
+  const accessCode = accessCodes.find((code) => code.accessCode === id);
+
   const [current, setCurrent] = useState(0);
 
   const deckDivRef = useRef<HTMLDivElement>(null); // reference to deck container div
@@ -180,7 +190,7 @@ function App() {
       parent element. Make sure the parent is not 0-height.
      */}
       <span className="hidden absolute -z-40">{current}</span>
-      <div className="absolute inset-0 p-4 bg-gradient-to-tl from-slate-950 via-black to-slate-950">
+      <div className="absolute h-screen w-screen inset-0 p-4 bg-gradient-to-tl from-slate-950 via-black to-slate-950">
         <div className="reveal text-indigo-200 " ref={deckDivRef}>
           <div className="slides font-sans">
             {slides?.map((slide, index) => {
@@ -222,4 +232,4 @@ function App() {
   );
 }
 
-export default App;
+export default Deck;

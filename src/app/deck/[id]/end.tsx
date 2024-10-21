@@ -25,8 +25,8 @@ export default function DeckPage({ current }: { current?: boolean }) {
               y2="53.0925"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#560FEE" />
-              <stop offset="1" stop-color="#63EF9F" />
+              <stop stopColor="#560FEE" />
+              <stop offset="1" stopColor="#63EF9F" />
             </linearGradient>
           </defs>
         </svg>

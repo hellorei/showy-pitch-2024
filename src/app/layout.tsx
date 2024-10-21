@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Analytics from "./analytics";
 import { narrow } from "./fonts";
 import "./globals.css";
 
@@ -32,10 +33,12 @@ export default function RootLayout({
           geistSans.variable,
           geistMono.variable,
           narrow.variable,
-          "antialiased"
+          "antialiased",
+          "dark bg-black dark:bg-black"
         )}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import AccessForm from "./AccessForm";
 
 export default function Home() {
@@ -28,7 +29,9 @@ export default function Home() {
         </ol>
 
         <div className="flex gap-4 items-center flex-col w-full">
-          <AccessForm />
+          <Suspense>
+            <AccessForm />
+          </Suspense>
         </div>
       </main>
       {/* 

@@ -4,8 +4,6 @@ import { cloneElement, useEffect, useRef, useState } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
-import { useParams, useRouter } from "next/navigation";
-import accessCodes from "../../lib/accessCodes";
 import Ask from "./ask";
 import AskFinances from "./ask-finances";
 import Beat1 from "./beat-1";
@@ -26,14 +24,6 @@ import Market2 from "./market-2";
 import Team from "./team";
 
 function Deck() {
-  // const pathname = usePathname();
-  const { id } = useParams();
-  const router = useRouter();
-
-  // const searchParams = useSearchParams();
-
-  const accessCode = accessCodes.find((code) => code.accessCode === id);
-
   const [current, setCurrent] = useState(0);
 
   const deckDivRef = useRef<HTMLDivElement>(null); // reference to deck container div

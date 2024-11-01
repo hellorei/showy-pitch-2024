@@ -18,9 +18,9 @@ export default function DeckPage({ current }: { current?: boolean }) {
   console.log(current);
   const market = [
     {
-      variable: "Accelerator",
+      variable: "Pre-Seed",
       highlighted: true,
-      target: "Up to 10% Equity",
+      target: "Up to 10%",
       deal: "KISS / SAFE",
       goal: "",
       icon: (

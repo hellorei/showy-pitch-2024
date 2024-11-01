@@ -10,13 +10,16 @@ import Beat1 from "./beat-1";
 import Beat2 from "./beat-2";
 import Beat3 from "./beat-3";
 import Beat4b from "./beat-4b";
+import Beat4bDemo from "./beat-4bDemo";
 import Beat4bFeatures from "./beat-4bFeatures";
+import BeatContentHow from "./beat-content-how";
 import BusinessModel from "./business-model";
 import BusinessModelAllFit from "./business-model-allFit";
 import Closing from "./closing";
 import Closing2 from "./closing2";
 import Cover from "./cover";
 import End from "./end";
+import FinancesLtvCac from "./finances-ltv-cac";
 import JourneyExtended from "./journey-extended";
 import Journey1 from "./journey1";
 import Market from "./market";
@@ -73,6 +76,15 @@ function Deck() {
       content: [<Beat1 key={"Beat1"} />],
       multiple: false,
     },
+    {
+      title: "Problem",
+      content: [
+        <BeatContentHow key={"BeatContentHow"} />,
+        // <BeatContentHowPro key={"BeatContentHowPro"} />,
+      ],
+      multiple: false,
+      // multiple: true,
+    },
     // {
     //   title: "The Sh*w Must Go On!",
     //   content: [<Beat2b />],
@@ -101,6 +113,7 @@ function Deck() {
       content: [
         <Beat4b key="Beat4b" />,
         <Beat4bFeatures key="Beat4bFeatures" />,
+        <Beat4bDemo key="Beat4bDemo" />,
       ],
       multiple: true,
     },
@@ -138,6 +151,7 @@ function Deck() {
         <Ask key="Ask" />,
         <AskFinances key="AskFinances" />,
         <BusinessModelAllFit key="BusinessModelAllFit" />,
+        <FinancesLtvCac key="FinancesLtvCac" />,
       ],
       multiple: true,
     },

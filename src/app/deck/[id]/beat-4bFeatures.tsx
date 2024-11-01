@@ -119,6 +119,9 @@ export default function DeckPage({ current }: { current?: boolean }) {
 
   return (
     <div>
+      <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-center relative">
+        General Features
+      </p>
       <div className="flex flex-col items-start justify-center relative">
         <div className="text-left mb-0 flex pt-0">
           <img

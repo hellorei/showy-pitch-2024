@@ -292,6 +292,9 @@ export default function DeckPage({ current }: { current?: boolean }) {
                     </li>
                   ))}
                 </ol>
+                {/* <p className="text-[10px] text-center mx-auto uppercase tracking-widest text-slate-500">
+                  Clients
+                </p> */}
                 {item?.logos}
               </div>
             ))}

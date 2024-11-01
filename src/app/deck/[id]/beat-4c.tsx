@@ -157,7 +157,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
       <div className="grid grid-cols-5 items-center justify-center">
         <div className="text-left mb-0 flex flex-col pt-0 col-span-2">
           <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-6 mr-auto text-left">
-            SHowy empowers
+            Showy empowers
             <br />
             creative teams to ship
           </p>

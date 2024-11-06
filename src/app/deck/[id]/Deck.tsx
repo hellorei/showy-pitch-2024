@@ -4,6 +4,10 @@ import { cloneElement, useEffect, useRef, useState } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
+import Appendix1FactsAi from "./appendix-1-facts-ai";
+import Appendix1FactsMarket from "./appendix-1-facts-market";
+import Appendix1FactsMarketCalculations from "./appendix-1-facts-market-calculations";
+import Appendix1FactsWorkflow from "./appendix-1-facts-workflow";
 import Ask from "./ask";
 import Beat1 from "./beat-1";
 import Beat2 from "./beat-2";
@@ -174,6 +178,16 @@ function Deck() {
       title: "Contact Information",
       content: [<End key="End" />],
       multiple: false,
+    },
+    {
+      title: "Appendix 1 - Market Analysis",
+      content: [
+        <Appendix1FactsMarketCalculations key="Appendix1FactsMarketCalculations" />,
+        <Appendix1FactsMarket key="Appendix1FactsMarket" />,
+        <Appendix1FactsWorkflow key="Appendix1FactsWorkflow" />,
+        <Appendix1FactsAi key="Appendix1FactsAi" />,
+      ],
+      multiple: true,
     },
     // {
     //   title: "Contact Information",

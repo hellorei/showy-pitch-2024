@@ -5,7 +5,6 @@ import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 // import "reveal.js/dist/theme/black.css";
 import Ask from "./ask";
-import AskFinances from "./ask-finances";
 import Beat1 from "./beat-1";
 import Beat2 from "./beat-2";
 import Beat3 from "./beat-3";
@@ -151,7 +150,7 @@ function Deck() {
       title: "The Ask",
       content: [
         <Ask key="Ask" />,
-        <AskFinances key="AskFinances" />,
+        // <AskFinances key="AskFinances" />,
         <FinancesLtvCac key="FinancesLtvCac" />,
         <FinancesGoals1 key="FinancesGoals1" />,
         <FinancesGoals2 key="FinancesGoals2" />,

@@ -1,17 +1,17 @@
 import clsx from "clsx";
 import {
-  Building2,
+  Blocks,
   ChevronRight,
   ChevronsRight,
   ChevronsUp,
-  Cpu,
   Globe,
-  Heart,
-  RadioTower,
-  Server,
-  User,
-  UserCog,
-  Users,
+  HandCoins,
+  HeartHandshake,
+  Mic,
+  Rocket,
+  Sprout,
+  UserCircle,
+  UsersRound,
 } from "lucide-react";
 
 export default function DeckPage({ current }: { current?: boolean }) {
@@ -48,7 +48,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
           summary:
             "Aggressive content marketing, influencer partnerships, community building, SEM/SEO.",
           icon: (
-            <User
+            <Rocket
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -58,7 +58,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
         {
           key: "Engage Key Partners",
           icon: (
-            <UserCog
+            <HeartHandshake
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -68,7 +68,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
         {
           key: "Growth Hack: 100K Users",
           icon: (
-            <Users
+            <Sprout
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -78,7 +78,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
         {
           key: "Lock-in Seed Round",
           icon: (
-            <Building2
+            <HandCoins
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -112,9 +112,9 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
       problems: [
         {
-          key: "Build Team",
+          key: "Build Core Team",
           icon: (
-            <Server
+            <UserCircle
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -124,7 +124,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
         {
           key: "Influencer Partenerships",
           icon: (
-            <RadioTower
+            <Mic
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -134,7 +134,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
         {
           key: "Positioning: 600K+ Users",
           icon: (
-            <Cpu
+            <UsersRound
               className="stroke-emerald-300 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -181,7 +181,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
             </span>
           ),
           icon: (
-            <Building2
+            <Blocks
               className="stroke-indigo-400 opacity-80 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}
@@ -192,7 +192,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
           key: "Brand Partnerships",
           summary: <span className="opacity-70">Telemetry & Analytics.</span>,
           icon: (
-            <Heart
+            <HeartHandshake
               className="stroke-indigo-400 opacity-80 shrink-0 grow-0 mr-1 relative top-0.5"
               size={24}
               strokeWidth={1}

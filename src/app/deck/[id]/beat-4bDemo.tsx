@@ -31,7 +31,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
       <div className="flex items-center justify-center">
         <div className="aspect-video h-[520px]">
           <iframe
-            src="https://drive.google.com/file/d/1fsnueDJy7qUfVDtkBxx8jdoLpXfMSJB1/preview"
+            src="https://drive.google.com/file/d/14E7DwsLTsrpd1-2rlKrfRG54IC-qLPJC/preview"
             width="100%"
             height="100%"
             className="rounded-xl overflow-hidden"

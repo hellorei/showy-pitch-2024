@@ -360,7 +360,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        Growth Strategy
+        Business Model
       </p>
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
         Scalable Revenue, Controlled Costs.
@@ -374,7 +374,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
               item?.highlighted && "relative left-4"
             )}
           >
-            {/* <div className="flex-col relative pb-4">
+            <div className="flex-col relative pb-4">
               <div className="flex flex-col">
                 <div className="flex flex-col mx-auto text-center items-center justify-center">
                   <div className="font-semibold text-[3.5rem] font-narrow uppercase tracking-tighter text-white flex items-end leading-[0.9]">
@@ -391,14 +391,13 @@ export default function DeckPage({ current }: { current?: boolean }) {
                   </div>
                 )}
               </div>
-            </div> 
+            </div>
             <div
               className={clsx(
                 "border-b border-dashed grow my-2",
                 item?.highlighted ? "border-emerald-400" : "border-indigo-400"
               )}
             ></div>
-                */}
             <div className="flex flex-col relative">
               {!item?.highlighted ? (
                 <div className="text-lg leading-[1.1] my-4 text-slate-200 text-center flex items-center justify-center border rounded-xl border-slate-700 h-20">

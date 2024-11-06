@@ -19,6 +19,8 @@ import Closing from "./closing";
 import Closing2 from "./closing2";
 import Cover from "./cover";
 import End from "./end";
+import FinancesGoals1 from "./finances-goals-1";
+import FinancesGoals2 from "./finances-goals-2";
 import FinancesLtvCac from "./finances-ltv-cac";
 import JourneyExtended from "./journey-extended";
 import Journey1 from "./journey1";
@@ -150,8 +152,10 @@ function Deck() {
       content: [
         <Ask key="Ask" />,
         <AskFinances key="AskFinances" />,
-        <BusinessModelAllFit key="BusinessModelAllFit" />,
         <FinancesLtvCac key="FinancesLtvCac" />,
+        <FinancesGoals1 key="FinancesGoals1" />,
+        <FinancesGoals2 key="FinancesGoals2" />,
+        <BusinessModelAllFit key="BusinessModelAllFit" />,
       ],
       multiple: true,
     },

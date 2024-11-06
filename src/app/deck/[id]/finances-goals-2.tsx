@@ -31,6 +31,7 @@ interface TooltipProps {
 }
 interface TooltipProps {
   active?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   payload?: Array<{
     value: number;
@@ -42,6 +43,7 @@ interface TooltipProps {
 }
 const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const dataPoint = payload[0].payload as CashFlowPoint;
     return (

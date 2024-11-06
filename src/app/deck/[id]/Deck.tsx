@@ -138,8 +138,11 @@ function Deck() {
     },
     {
       title: "Business Model",
-      content: [<BusinessModel key="BusinessModel" />],
-      multiple: false,
+      content: [
+        <BusinessModel key="BusinessModel" />,
+        <BusinessModelAllFit key="BusinessModelAllFit" />,
+      ],
+      multiple: true,
     },
     {
       title: "Team",
@@ -154,7 +157,6 @@ function Deck() {
         <FinancesLtvCac key="FinancesLtvCac" />,
         <FinancesGoals1 key="FinancesGoals1" />,
         <FinancesGoals2 key="FinancesGoals2" />,
-        <BusinessModelAllFit key="BusinessModelAllFit" />,
       ],
       multiple: true,
     },

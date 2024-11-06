@@ -135,7 +135,7 @@ const CACPaybackChart = ({
           dataKey="Payback"
           stroke="#82ca9d"
           fill="#82ca9d"
-          fillOpacity={0.5}
+          fillOpacity={0.6}
           stackId="1"
           name="Payback"
         />
@@ -207,12 +207,12 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wide font-medium pb-2 mr-auto text-left">
-        Finances - Customer Acquisition
+        Finances - Pre-Seed
       </p>
       <div className="grid grid-cols-5 gap-8 items-center">
         <div className="col-span-2 flex flex-col space-y-2">
           <div className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
-            Pre-seed Goals
+            Lifetime & Customer Acquisition
           </div>
           <div className="rounded-xl border-2 border-indigo-500 grid grid-cols-3">
             <div className="flex flex-col items-center p-4">

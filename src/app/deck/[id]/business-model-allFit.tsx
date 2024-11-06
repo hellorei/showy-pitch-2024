@@ -13,6 +13,7 @@ import {
   Minus,
   Package,
   RefreshCw,
+  Sparkles,
   Target,
   UserCheck,
   Users,
@@ -71,6 +72,17 @@ export default function DeckPage({ current }: { current?: boolean }) {
           summary: "Invitations, sharing, & collaboration organic growth.",
           icon: (
             <Waypoints
+              className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={14}
+            />
+          ),
+        },
+        {
+          key: "Content Strategy",
+          summary:
+            "Leverage capabilities in content creation and distribution.",
+          icon: (
+            <Sparkles
               className="stroke-indigo-400 shrink-0 grow-0 mr-1 relative top-0.5"
               size={14}
             />
@@ -234,7 +246,8 @@ export default function DeckPage({ current }: { current?: boolean }) {
           key: <span className="text-slate-400">Marketplace</span>,
           summary: (
             <span className="opacity-70">
-              SDK & ecosystem for third-party extensions.
+              SDK & ecosystem for third-party extensions, apps, pipelines, and
+              models.
             </span>
           ),
           icon: (
@@ -246,7 +259,13 @@ export default function DeckPage({ current }: { current?: boolean }) {
         },
         {
           key: <span className="text-slate-400">Data Insights</span>,
-          summary: <span className="opacity-70">Telemetry & Analytics.</span>,
+          summary: (
+            <span className="opacity-70">
+              Use Telemetry & Analytics to generate industry insight for
+              enterprise clients on content creation trends and workflows
+              performance.
+            </span>
+          ),
           icon: (
             <FileChartColumn
               className="stroke-slate-400 opacity-60 shrink-0 grow-0 mr-1 relative top-0.5"
@@ -360,10 +379,10 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        Growth Strategy
+        Business Model
       </p>
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
-        Scalable Revenue, Controlled Costs.
+        Strategy & Tactics
       </p>
       <div className="grid grid-cols-4 gap-6 items-start justify-start pb-4">
         {market.map((item, index) => (

@@ -50,13 +50,11 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wide font-medium pb-2 mr-auto text-left">
-        Finances - Go-To-Market & Growth OKRs
+        Finances - Pre-Seed
       </p>
-      {/* 
-      <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
-        Simple • Scalable • Extensible
+      <p className="text-slate-400 text-xl font-base mr-auto text-left">
+        Go-to-market & Growth OKRs
       </p>
-        */}
       <div className="grid grid-cols-2 gap-4">
         <div className="overflow-x-auto pt-8">
           <table className="min-w-full text-base text-left">
@@ -144,8 +142,8 @@ export default function DeckPage({ current }: { current?: boolean }) {
             >
               <defs>
                 <linearGradient id="colorUsers" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#6366f1" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="colorMrr" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#10B981" stopOpacity={0.8} />

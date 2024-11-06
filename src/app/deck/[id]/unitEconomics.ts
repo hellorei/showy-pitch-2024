@@ -126,7 +126,7 @@ export const preSeedQuarterRevenue = [
 ];
 
 export const preSeedExpensesGrowth = [15000, 24000, 72000, 150000];
-export const preSeedExpensesOperations = [67000, 82500, 163500, 253500];
+export const preSeedExpensesOperations = [70000, 84000, 165000, 249000];
 export const preSeedExpensesTotal = [
   preSeedExpensesOperations[0] + preSeedExpensesGrowth[0],
   preSeedExpensesOperations[1] + preSeedExpensesGrowth[1],
@@ -170,13 +170,6 @@ export const preSeedBurnRate = [
   preSeedBurn[1] / 3,
   preSeedBurn[2] / 3,
   preSeedBurn[3] / 3,
-];
-
-export const preSeedRunway = [
-  preSeedCashFlow[0] - preSeedBurn[0],
-  preSeedCashFlow[1] - preSeedBurn[1],
-  preSeedCashFlow[2] - preSeedBurn[2],
-  preSeedCashFlow[3] - preSeedBurn[3],
 ];
 
 // Pre-seed quarterly data from table
@@ -387,6 +380,8 @@ export const runway1 = preSeedCashFlow[1] / preSeedBurnRate[1];
 export const runway2 = preSeedCashFlow[2] / preSeedBurnRate[2];
 export const runway3 = preSeedCashFlow[3] / preSeedBurnRate[3];
 
+export const preSeedRunway = [runway0, runway1, runway2, runway3];
+
 export const dataFinancialModel = [
   {
     metric: "Revenue",
@@ -476,10 +471,10 @@ export const dataFinancialModel = [
   },
   {
     metric: "Runway",
-    q1: runway0 > 0 ? Math.round(runway0) : "-",
-    q2: runway1 > 0 ? Math.round(runway1) : "-",
-    q3: runway2 > 0 ? Math.round(runway2) : "-",
-    q4: runway3 > 0 ? Math.round(runway3) : "-",
+    q1: preSeedRunway[0] > 0 ? Math.round(preSeedRunway[0]) : "-",
+    q2: preSeedRunway[1] > 0 ? Math.round(preSeedRunway[1]) : "-",
+    q3: preSeedRunway[2] > 0 ? Math.round(preSeedRunway[2]) : "-",
+    q4: preSeedRunway[3] > 0 ? Math.round(preSeedRunway[3]) : "-",
     highlighted: true,
   },
 ];
@@ -497,10 +492,12 @@ export const dataGrowthModelGraphic: DataPointGrowth[] = [
   { quarter: "Q4", users: preSeedUsers[3], mrr: preSeedMrr[3] },
 ];
 
-interface CashFlowPoint {
+export interface CashFlowPoint {
   quarter: string;
   cashFlow: number;
   burn: number;
+  burnRate: number;
+  runway: number;
 }
 
 export const dataCashFlowGraphic: CashFlowPoint[] = [
@@ -508,20 +505,28 @@ export const dataCashFlowGraphic: CashFlowPoint[] = [
     quarter: "Q1",
     cashFlow: preSeedCashFlow[0],
     burn: -preSeedBurn[0],
+    burnRate: preSeedBurnRate[0],
+    runway: preSeedRunway[0],
   },
   {
     quarter: "Q2",
     cashFlow: preSeedCashFlow[1],
     burn: -preSeedBurn[1],
+    burnRate: preSeedBurnRate[1],
+    runway: preSeedRunway[1],
   },
   {
     quarter: "Q3",
     cashFlow: preSeedCashFlow[2],
     burn: -preSeedBurn[2],
+    burnRate: preSeedBurnRate[2],
+    runway: preSeedRunway[2],
   },
   {
     quarter: "Q4",
     cashFlow: preSeedCashFlow[3],
     burn: -preSeedBurn[3],
+    burnRate: preSeedBurnRate[3],
+    runway: preSeedRunway[3],
   },
 ];

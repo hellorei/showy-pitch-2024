@@ -10,7 +10,11 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { dataCashFlowGraphic, dataFinancialModel } from "./unitEconomics";
+import {
+  CashFlowPoint,
+  dataCashFlowGraphic,
+  dataFinancialModel,
+} from "./unitEconomics";
 
 const formatTooltipValue = (value: number): string => {
   return humanFormat(value);
@@ -25,17 +29,40 @@ interface TooltipProps {
   }>;
   label?: string;
 }
-
+interface TooltipProps {
+  active?: boolean;
+  // @ts-ignore
+  payload?: Array<{
+    value: number;
+    name: string;
+    color: string;
+    payload: CashFlowPoint; // Add this to access the full data point
+  }>;
+  label?: string;
+}
 const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
+    // @ts-ignore
+    const dataPoint = payload[0].payload as CashFlowPoint;
     return (
-      <div className="bg-gray-800 bg-opacity-75 py-1 px-3 rounded shadow-lg">
+      <div className="bg-slate-950/70 border border-slate-900 py-1 px-3 rounded shadow-lg">
         <p className="text-gray-200 font-bold">{label}</p>
         {payload.map((entry, index) => (
           <p key={index} style={{ color: entry.color }}>
             {`${entry.name}: ${formatTooltipValue(entry.value)}`}
           </p>
         ))}
+        {/* Add runway info if it exists */}
+        {dataPoint.burnRate > 0 && (
+          <p className="text-orange-400">
+            {`Burn Rate: ${humanFormat(dataPoint.burnRate)} / month`}
+          </p>
+        )}
+        {dataPoint.runway > 0 && (
+          <p className="text-cyan-400">
+            {`Runway: ${dataPoint.runway.toFixed()} months`}
+          </p>
+        )}
       </div>
     );
   }
@@ -49,13 +76,11 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wide font-medium pb-2 mr-auto text-left">
-        Finances - Pre-Seed Financial OKRs
+        Finances - Pre-Seed
       </p>
-      {/* 
-      <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
-        Simple • Scalable • Extensible
+      <p className="text-slate-400 text-xl font-base mr-auto text-left">
+        Cash Flow vs Burn
       </p>
-        */}
       <div className="grid grid-cols-2 gap-4">
         <div className="overflow-x-auto pt-8">
           <table className="min-w-full text-sm text-left">
@@ -135,7 +160,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
             </tbody>
           </table>
         </div>
-        <div className="h-40 text-xs text-or">
+        <div className="h-40 text-xs">
           <ResponsiveContainer width="100%" height={420}>
             <ComposedChart
               data={data}
@@ -149,7 +174,8 @@ export default function DeckPage({ current }: { current?: boolean }) {
                 tickFormatter={(value) => `$${value / 1000}K`}
                 domain={[-100000, 250000]}
                 ticks={[
-                  -100000, -50000, 0, 50000, 100000, 150000, 200000, 250000,
+                  -250000, -150000, -100000, -60000, -30000, 0, 50000, 100000,
+                  150000, 200000, 250000,
                 ]}
               />
               <Tooltip
@@ -158,19 +184,19 @@ export default function DeckPage({ current }: { current?: boolean }) {
               />
               <Legend />
               <Bar
-                dataKey="cashFlow"
-                name="Cash Flow"
-                stroke="#6366f1"
-                fill="#4f46e5"
-                fillOpacity={0.8}
+                dataKey="burn"
+                name="Quarter Burn"
+                stroke="#818cf8"
+                fill="#818cf8"
+                fillOpacity={0.7}
                 radius={[4, 4, 0, 0]}
               />
               <Bar
-                dataKey="burn"
-                name="Burn"
-                stroke="#f97316"
-                fill="#f97316"
-                fillOpacity={0.8}
+                dataKey="cashFlow"
+                name="Cash Flow"
+                stroke="#82ca9d"
+                fill="#82ca9d"
+                fillOpacity={0.7}
                 radius={[4, 4, 0, 0]}
               />
             </ComposedChart>

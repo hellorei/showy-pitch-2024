@@ -303,7 +303,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div className="pt-24">
       <p className="text-orange-400 uppercase text-2xl tracking- mr-auto text-left">
-        Creating content is...
+        Content Creation is...
       </p>
       <div className="grid grid-cols-5 gap-12 items-start justify-start pt-8">
         <div className="col-span-2 text-left mb-0 flex flex-col pt-0">

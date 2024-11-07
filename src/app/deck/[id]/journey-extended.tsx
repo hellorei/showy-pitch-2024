@@ -52,6 +52,15 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
       keys: [
         {
+          key: `First concept: "A TV Studio in your Browser". An cloud-based video production application we created for internal use.`,
+          icon: (
+            <Check
+              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={14}
+            />
+          ),
+        },
+        {
           key: "200+ demos at NAB.",
           icon: (
             <Check
@@ -89,7 +98,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
       keys: [
         {
-          key: "COVID-19: Increased demand for remote collaboration.",
+          key: "COVID-19: Increased demand for remote collaboration made people ask for Showy, we decided to build it as a cloud collaboration tool for live video production.",
           icon: (
             <Check
               className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
@@ -137,6 +146,15 @@ export default function DeckPage({ current }: { current?: boolean }) {
       keys: [
         {
           key: "Iterative engineering sessions with industry partners & key enterprise customers.",
+          icon: (
+            <Check
+              className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
+              size={14}
+            />
+          ),
+        },
+        {
+          key: "Closed production trials & validation with key users.",
           icon: (
             <Check
               className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"
@@ -304,27 +322,27 @@ export default function DeckPage({ current }: { current?: boolean }) {
   ];
 
   const lessons = [
-    "The industry needs more than just another tool.",
-    "Need for a reimagined workflow that addresses fragmentation.",
-    "Need for automation, simplified asset management, and seamless collaboration.",
+    "The industry needs more than exclusive enterprise tools that neglect small teams and individuals.",
+    "Creatives need a platform to solve fragmentation and connect teams, creators, & decision-makers.",
+    "Everyone struggle without standard processes or a centralized platform to manage productions.",
   ];
 
   const takeaways = [
-    "Validated Market Need: Industry engagement proved demand for our solution",
-    "Business Model: Pivoted to address broader market with improved cost structure.",
-    "Resilience & Adaptability: Overcame significant challenges on many fronts.",
+    "Validation: Industry engagement proved the need & shaped our product",
+    "Opportunity: Untapped a more scalable business model with a larger market.",
+    "Pivot: Changed our UVP from B2B to a B2B/B2B2C democratized model.",
   ];
 
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        SHowy empowers creative teams to ship
+        Our Journey
       </p>
       <div className="flex flex-col items-start justify-start">
         <div className="text-left mb-0 flex flex-col pt-4">
-          <div className="text-[7.5rem] font-narrow font-light leading-[0.8] uppercase tracking-tighter relative right-2 pb-4">
-            <span className="font-semibold">Traction</span>{" "}
-            <span className="opacity-60">&</span> Journey
+          <div className="text-7xl font-narrow font-light leading-[0.8] uppercase tracking-tighter relative right-2 pb-4">
+            <span className="font-semibold">Timeline</span>{" "}
+            <span className="opacity-60">&</span> Challenges
           </div>
         </div>
         <div className="flex flex-col text-lg text-left relative items-center justify-center pt-4">
@@ -366,7 +384,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
             ))}
           </div>
           <div className=" relative w-full grid grid-cols-10 gap-2 pt-4">
-            <div className="col-span-5 relative rounded-xl px-1">
+            <div className="col-span-6 relative rounded-xl px-1">
               <div className="absolute h-5 -top-5 left-0 w-full border border-dashed border-indigo-400 border-t-transparent rounded-b-lg"></div>
               <div className="my-3 text-xs font-bold">Lessons Learned</div>
               <ol className="space-y-1">
@@ -380,14 +398,16 @@ export default function DeckPage({ current }: { current?: boolean }) {
                 ))}
               </ol>
             </div>
-            <div className="col-span-5 relative rounded-xl px-1">
+            <div className="col-span-4 relative rounded-xl px-1">
               <div className="absolute h-5 -top-5 left-0 w-full border border-dashed border-indigo-400 border-t-transparent rounded-b-lg"></div>
-              <div className="my-3 text-xs font-bold">Key Takeaways</div>
-              <ol className="space-y-1">
+              <div className="my-3 text-xs font-bold">
+                Key Takeaways & Pivot
+              </div>
+              <ol className="space-y-1 whitespace-nowrap">
                 {takeaways.map((lesson, index) => (
                   <li
                     key={`lesson-${index}`}
-                    className="text-xs text-slate-400 "
+                    className="text-xs text-slate-400 whitespace-nowrap"
                   >
                     {String.fromCharCode(97 + index)}) {lesson}
                   </li>

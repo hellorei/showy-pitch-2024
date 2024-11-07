@@ -13,6 +13,12 @@ export default function AccessForm() {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [company, setCompany] = useState("");
+  const [topic, setTopic] = useState("");
+  const [linkedIn, setLinkedIn] = useState("");
+  const [phone, setPhone] = useState("");
+  const [terms, setTerms] = useState(false);
+  const [website, setWebsite] = useState("");
+
   const [accessContinue, setAccessContinue] = useState(false);
   const [accessCode, setAccessCode] = useState<{
     accessCode: string;
@@ -68,7 +74,10 @@ export default function AccessForm() {
 
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
-    setAccessContinue(true);
+    if (!accessContinue) {
+      setAccessContinue(true);
+      return;
+    }
 
     if (accessCode) {
       // send access code
@@ -164,9 +173,38 @@ export default function AccessForm() {
                 If you already have access, verify you entered the correct email
                 or access code.
               </p>
+
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="password"
+                  htmlFor="topic"
+                  className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
+                >
+                  Topic
+                </label>
+              </div>
+              <div className="mt-2">
+                <select
+                  id="topic"
+                  name="topic"
+                  disabled={processing}
+                  required
+                  value={topic}
+                  onChange={(e) => setTopic(e.target.value)}
+                  className="block w-full rounded-full border-0 bg-white/5 text-lg h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:leading-6"
+                >
+                  <option value="" disabled selected className="opacity-60">
+                    Select an option
+                  </option>
+                  <option value="investment">Investment</option>
+                  <option value="accelerator">Acceleration Program</option>
+                  <option value="partner">Key Partner / Provider</option>
+                  <option value="collaborator">Collaborator / Advisor</option>
+                </select>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="name"
                   className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
                 >
                   Name
@@ -187,7 +225,7 @@ export default function AccessForm() {
 
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="password"
+                  htmlFor="title"
                   className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
                 >
                   Job Title
@@ -208,7 +246,7 @@ export default function AccessForm() {
 
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="password"
+                  htmlFor="company"
                   className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
                 >
                   Company
@@ -225,6 +263,95 @@ export default function AccessForm() {
                   onChange={(e) => setCompany(e.target.value)}
                   className="block w-full rounded-full border-0 bg-white/5 text-lg h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:leading-6"
                 />
+              </div>
+
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="phone"
+                  className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
+                >
+                  Company Website
+                </label>
+              </div>
+              <div className="mt-2">
+                <input
+                  id="website"
+                  name="website"
+                  type="url"
+                  disabled={processing}
+                  required
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  className="block w-full rounded-full border-0 bg-white/5 text-lg h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:leading-6"
+                />
+              </div>
+
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="phone"
+                  className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
+                >
+                  Phone / WhatsApp
+                </label>
+              </div>
+              <div className="mt-2">
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  disabled={processing}
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="block w-full rounded-full border-0 bg-white/5 text-lg h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:leading-6"
+                />
+              </div>
+
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="linkedIn"
+                  className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
+                >
+                  LinkedIn
+                </label>
+              </div>
+              <div className="mt-2">
+                <input
+                  id="linkedIn"
+                  name="linkedIn"
+                  type="url"
+                  disabled={processing}
+                  required
+                  value={linkedIn}
+                  onChange={(e) => setLinkedIn(e.target.value)}
+                  className="block w-full rounded-full border-0 bg-white/5 text-lg h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 text-white shadow-sm ring-1 ring-inset ring-white/20 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:leading-6"
+                />
+              </div>
+
+              <div className="pt-5 relative flex items-start">
+                <div className="flex h-6 items-center">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    disabled={processing}
+                    required
+                    checked={terms}
+                    onChange={(e) => setTerms(e.target.checked)}
+                    className="ml-2 h-4 w-4 rounded bg-white/10 border-white/20 text-indigo-600 focus:ring-indigo-500"
+                  />
+                </div>
+                <div className="ml-3 text-sm/6">
+                  <label
+                    htmlFor="terms"
+                    className="pl-2 font-mono block text-base mb-1 font-medium leading-6 text-white"
+                  >
+                    <span>
+                      I agree to receive email updates and messages from Showy
+                      for investors & stakeholders relations information.
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           )}

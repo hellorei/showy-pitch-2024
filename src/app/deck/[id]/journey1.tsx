@@ -33,7 +33,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        Our Journey so far...
+        Our Journey
       </p>
       <div className="grid grid-cols-2 gap-12 items-start justify-start">
         <div className="text-left mb-0 flex flex-col pt-4">

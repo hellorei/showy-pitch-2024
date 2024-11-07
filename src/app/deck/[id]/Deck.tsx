@@ -29,6 +29,8 @@ import JourneyExtended from "./journey-extended";
 import Journey1 from "./journey1";
 import Market from "./market";
 import Market2 from "./market-2";
+import Opening from "./opening";
+import Opening2 from "./opening2";
 import Team from "./team";
 
 function Deck() {
@@ -74,6 +76,16 @@ function Deck() {
     {
       title: "Introduction",
       content: [<Cover key={"Cover"} />],
+      multiple: false,
+    },
+    {
+      title: "Opening",
+      content: [<Opening key="Opening" />],
+      multiple: false,
+    },
+    {
+      title: "Opening",
+      content: [<Opening2 key="Opening2" />],
       multiple: false,
     },
     {
@@ -137,7 +149,14 @@ function Deck() {
     // },
     {
       title: "Market",
-      content: [<Market key="Market" />, <Market2 key="Market2" />],
+      content: [
+        <Market key="Market" />,
+        <Market2 key="Market2" />,
+        <Appendix1FactsMarketCalculations key="Appendix1FactsMarketCalculations" />,
+        <Appendix1FactsMarket key="Appendix1FactsMarket" />,
+        <Appendix1FactsWorkflow key="Appendix1FactsWorkflow" />,
+        <Appendix1FactsAi key="Appendix1FactsAi" />,
+      ],
       multiple: true,
     },
     {
@@ -179,16 +198,16 @@ function Deck() {
       content: [<End key="End" />],
       multiple: false,
     },
-    {
-      title: "Appendix 1 - Market Analysis",
-      content: [
-        <Appendix1FactsMarketCalculations key="Appendix1FactsMarketCalculations" />,
-        <Appendix1FactsMarket key="Appendix1FactsMarket" />,
-        <Appendix1FactsWorkflow key="Appendix1FactsWorkflow" />,
-        <Appendix1FactsAi key="Appendix1FactsAi" />,
-      ],
-      multiple: true,
-    },
+    // {
+    //   title: "Appendix 1 - Market Analysis",
+    //   content: [
+    //     <Appendix1FactsMarketCalculations key="Appendix1FactsMarketCalculations" />,
+    //     <Appendix1FactsMarket key="Appendix1FactsMarket" />,
+    //     <Appendix1FactsWorkflow key="Appendix1FactsWorkflow" />,
+    //     <Appendix1FactsAi key="Appendix1FactsAi" />,
+    //   ],
+    //   multiple: true,
+    // },
     // {
     //   title: "Contact Information",
     //   content: [<Beat4bDemo key="Beat4bDemo" />],

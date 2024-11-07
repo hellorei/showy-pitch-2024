@@ -217,7 +217,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-indigo-400 uppercase text-2xl tracking-wider font-medium pb-2 mr-auto text-left">
-        Financing
+        Finances
       </p>
       <p className="text-slate-400 text-xl font-base pb-2 mr-auto text-left">
         Investment Roadmap

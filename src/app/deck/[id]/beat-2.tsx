@@ -6,7 +6,7 @@ import { HeartOff, ImageOff, RouteOff, WebhookOff } from "lucide-react";
 export default function DeckPage({ current }: { current?: boolean }) {
   const keyPainPoints = [
     {
-      leadingWord: "Fragmenting",
+      leadingWord: "Fragmented",
       title: "Collaboration",
       summary: "83% of creators affected by poor collaboration tools.",
       icon: (
@@ -18,7 +18,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
     },
     {
-      leadingWord: "Clogging",
+      leadingWord: "Hindered",
       title: "Creativity",
       summary: "60% of creators spend more time on admin tasks.",
       icon: (
@@ -30,7 +30,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
       ),
     },
     {
-      leadingWord: "Wasting",
+      leadingWord: "Wasted",
       title: "Time",
       summary: "20+ hours/month wasted searching for digital assets",
       icon: (
@@ -54,7 +54,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
     //   ),
     // },
     {
-      leadingWord: "Hindering",
+      leadingWord: "Bottleneck",
       title: (
         <>
           Production{" "}
@@ -79,7 +79,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
   return (
     <div>
       <p className="text-orange-400 uppercase text-2xl tracking-wide mr-auto text-left">
-        Complex workflows bottleneck production
+        Pains & Facts
       </p>
       <div className="grid grid-cols-2">
         <div className="text-left mb-0 flex flex-col pr-8 pt-4">

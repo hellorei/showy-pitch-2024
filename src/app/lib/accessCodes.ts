@@ -13,6 +13,13 @@ const accessCodes = [
     title: "COO",
     company: "Showy",
   },
+  {
+    accessCode: "77f05d107a3b",
+    email: "ronen@getshowy.com",
+    name: "Ronen Lasry",
+    title: "COO",
+    company: "Showy",
+  },
 ];
 
 export default accessCodes;

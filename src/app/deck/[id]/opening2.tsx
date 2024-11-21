@@ -103,7 +103,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
         </p>
       </div>
       <p className="text-slate-600 italic text-xl font-medium mt-6 mx-auto text-center">
-        People who do is part of{" "}
+        People who do are part of{" "}
         <span className="text-indigo-400">
           {`"`}The Creators Economy{`"`}
         </span>

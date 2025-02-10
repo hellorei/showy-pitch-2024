@@ -20,6 +20,13 @@ const accessCodes = [
     title: "COO",
     company: "Showy",
   },
+  {
+    accessCode: "b7b6e2e40011f",
+    email: "kevin.f.jackson@gmail.com",
+    name: "Kevin Jackson",
+    title: "Consultant",
+    company: "Feedback",
+  },
 ];
 
 export default accessCodes;

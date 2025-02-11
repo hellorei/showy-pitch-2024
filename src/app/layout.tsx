@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Showy Pitch Deck 2024",
+  title: "Showy Pitch Deck",
   description: "Private pitch deck for Showy",
 };
 

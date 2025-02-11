@@ -17,7 +17,7 @@ export default function Home() {
             fill="currentColor"
           />
         </svg>
-        <p className="text-3xl text-indigo-400">Investors Pitch Deck 2024</p>
+        <p className="text-3xl text-indigo-400">Investors Pitch Deck</p>
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by entering your email address or access code.

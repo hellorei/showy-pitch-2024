@@ -264,7 +264,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
           ),
         },
         {
-          key: "MVP Roadmap: Backend Ready. Production launch planned for December 2024.",
+          key: "MVP Roadmap: Backend Ready. Production launch planned for Q2 2025.",
           icon: (
             <Check
               className="stroke-emerald-400 shrink-0 grow-0 mr-1 relative top-0.5"

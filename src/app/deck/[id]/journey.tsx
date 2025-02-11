@@ -90,7 +90,7 @@ export default function DeckPage({ current }: { current?: boolean }) {
           size={14}
         />
       ),
-      summary: " ready for December 2024",
+      summary: " ready for Q2 2025",
     },
   ];
 

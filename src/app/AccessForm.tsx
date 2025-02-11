@@ -104,7 +104,7 @@ export default function AccessForm() {
       const formData = new FormData(e.target);
 
       formData.append("access_key", "f473c657-e723-490d-bb32-3c7951901032");
-      formData.append("subject", `Pitch Deck 2024 - Access Requested`);
+      formData.append("subject", `Pitch Deck - Access Requested`);
       formData.append("replyto", `contact@showy.tv`);
       formData.append("from_name", `Contact Form contact@showy.tv`);
 
